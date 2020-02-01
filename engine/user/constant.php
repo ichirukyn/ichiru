@@ -12,7 +12,11 @@ $user_stats_main = mysqli_fetch_array($user_stats_main_query);
 $user_exp_query = mysqli_query($bd_connect, "SELECT * FROM `exp`");
 $user_exp_ = mysqli_fetch_array($user_exp_query);
 if (!empty($user_stats['scorestats'])) {
-	
+	?>
+	<script type="text/javascript">
+		
+	</script>
+	<?php
 }
 
 //useravatar
