@@ -72,7 +72,7 @@ $avatar = $_SESSION['avatar'];
                                     <li class="class">Класс: <?php  echo $user_stats_main['user_class']?></li> 
                                     <li class="inclass">Подкласс: <?php  echo $user_stats_main['user_subclass']?></li>
                                     <li class="race">Раса: <?php  echo $user_stats_main['user_race']?></li>
-                                    <li class="lvl">Уровень: <?php  echo "$lv1 ($exp/$exp_to_lvl)"?></li>
+                                    <li class="lvl">Уровень: <?php  echo "$lv1 ($exp/$exp_total)"?></li>
                                 </ul>
                                 <span>Основные:</span>
                                 <ul>

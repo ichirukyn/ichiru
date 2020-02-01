@@ -39,17 +39,24 @@ $exp = $user_exp['user_exp'];
 $lvl_u = $exp = $user_exp['user_exp'];
 
 $q = mysqli_query($bd_connect,"SELECT MAX(t.lvl) FROM (SELECT lvl FROM levels WHERE exp_total - $exp <= 0) t");
-$q_2 = mysqli_query($bd_connect,"SELECT `levels`.`exp_to_lvl` FROM levels JOIN exp ON exp.user_lvl = levels.lvl WHERE exp.user_id = '$id'");
+
+
+//$q_2 = mysqli_query($bd_connect,"SELECT `levels`.`exp_to_lvl` FROM levels JOIN exp ON exp.user_lvl = levels.lvl WHERE exp.user_id = '$id'");
+//$q_2_array = mysqli_fetch_array($q_2);
+//$exp_to_lvl = $q_2_array["exp_to_lvl"];
 
 
 $lv11 = mysqli_fetch_array($q);
 $lv1 = $lv11["MAX(t.lvl)"];
-$q_2_array = mysqli_fetch_array($q_2);
-$exp_to_lvl = $q_2_array["exp_to_lvl"];
 $uplvl = mysqli_query($bd_connect,"UPDATE `exp` SET `user_lvl`= $lv1 WHERE `user_id` = '$id'");
-$expbar = round(($exp/$exp_to_lvl) * 100);
+//$expbar = round(($exp/$exp_to_lvl) * 100);
+$level = $lv1 + 1;
+$q_3 = mysqli_query($bd_connect,"SELECT * FROM `levels` WHERE lvl = '$level'");
+$q_3_array = mysqli_fetch_array($q_3);
+$exp_total = $q_3_array["exp_total"];
 
-//"SELECT * FROM skills JOIN user_skills ON skills.skill_id = user_skills.user_id WHERE user_skills.user_id = 2"
+//var_dump($q_3_array);
+
 
 //skill
 
