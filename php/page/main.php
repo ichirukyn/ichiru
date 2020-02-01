@@ -1,0 +1,456 @@
+<?php
+session_start();
+include "D:/os/OSPanel/domains/ichiru/php/user/constant.php";
+//"INNER JOIN 'table1' ..."
+$avatar = $_SESSION['avatar'];
+?>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <base href="http://ichiru">
+</head>
+<body>
+<link href="css/styles.css" type="text/css" rel="stylesheet">
+
+<header class="header">
+
+    <div class="header-wrapper">
+
+        <div class="header-menu-wrapper">
+
+            <div class="head-menu">
+                <div class="avatar-wrapp">
+                    <div class="avatar"> 
+                        <?php 
+                        if (empty($avatar)) {
+                            ?>
+                            <img src="uploads/logo/logo.jpg" />
+                        </form>
+                        <?php
+                        }
+                        else{
+                            ?>
+                            <img src='<?php echo $avatar?>' />
+                            <?php
+                        }
+
+                        ?>
+                        <div class="nick-name"><h2><?php  echo $_SESSION['userlogin']?></h2></div>
+                    </div>
+                    <div class="hp-mp-st-bar">
+                        <div class="hp-bar">hp 10/10</div>
+                        <div class="mp-bar">mp 10/10</div>
+                        <div class="st-bar">st 10/10</div>
+                    </div>
+
+                </div>
+                <div class="map-wrapp">
+                    <div class="map"><img src="{theme}/images/img/map.jpg"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+<div class="content-wrapper">
+    <div class="menu-wrapper">
+            
+            <!-- Stats -->
+
+            <div class="tabs_container">
+                <input class="hide" type="radio" name="tabs" id="tab1"/>
+                <label for="tab1">Статус</label>
+                <div class="tab_content" id="tab_content_1">
+                    <div class="stats-wrapp">
+                        <div class="stats-wrapp-list">
+                            <div class="stats-list">
+                                <span>Статус:</span>
+                                <ul>
+                                    <li class="class">Класс: <?php  echo $user_stats_main['user_class']?></li> 
+                                    <li class="inclass">Подкласс: <?php  echo $user_stats_main['user_subclass']?></li>
+                                    <li class="race">Раса: <?php  echo $user_stats_main['user_race']?></li>
+                                    <li class="lvl">Уровень: </li>
+                                </ul>
+                                <span>Основные:</span>
+                                <ul>
+                                    <div class="text-status">
+                                        <li class="str">Сила:</li>
+                                        <li id="stats-1"><?php  echo $user_stats['str']?></li> <button type="button" onClick="incrementClick()"></button>
+                                    </div>
+                                    <div class="text-status">
+                                        <li class="stamina">Выносливость:<li>
+                                        <li class="stats-1"><?php  echo $user_stats['stamina']?></li> <li class="plus-stats"></li>
+                                    </div>
+                                    <div class="text-status">
+                                        <li class="dexterity">Ловкость:<li>
+                                        <li class="stats-1"><?php  echo $user_stats['dexterity']?></li> <li class="plus-stats"></li>
+                                    </div>
+                                    <div class="text-status">
+                                        <li class="intelligence">Интелект:<li>
+                                        <li class="stats-1"><?php  echo $user_stats['intelligence']?></li> <li class="plus-stats"></li>
+                                    </div>
+                                </ul>
+                                <span>Побочные:</span>
+                                <ul>
+                                    <li class="wisdom">Мудрость: <?php  echo $user_stats['wisdom']?></li>
+                                    <li class="will">Воля: <?php  echo $user_stats['will']?></li>
+                                    <li class="charisma">Харизма: <?php  echo $user_stats['charisma']?></li>
+                                    <li class="lucky">Удача: <?php  echo $user_stats['lucky']?></li>
+                                </ul>
+                                <span>Очки Характеристик: <?php  echo $user_stats['scorestats']?></span>
+                            </div>
+                        </div>
+                        <div class="general-stats">
+                            <ul>
+                                <li class="stats-link">Здоровье:</li>
+                                <li class="stats-link">Усталость:</li>
+                                <li class="stats-link">Физ. Атака:</li>
+                                <li class="stats-link">Маг. Атака:</li>
+                                <li class="stats-link">Шанс Крита:</li>
+                                <li class="stats-link">Крит. урон:</li>
+                                <li class="stats-link">Скорость Атаки:</li>
+                                <li class="stats-link">Уклонение:</li>
+                                <li class="stats-link">Точность:</li>
+                                <li class="stats-link">Скорость:</li>
+                                <li class="stats-link">Сопростивление физ. урону:</li>
+                                <li class="stats-link">Сопростивление маг. урону:</li>
+                                <li class="stats-link">Сопростивление к яду:</li>
+                                <li class="stats-link">Сопростивление контролю:</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- skills-->
+
+            <div class="tabs_container">
+                <input class="hide" type="radio" name="tabs" id="tab2"/>
+                <label for="tab2">Скиллы</label>
+                <div class="tab_content" id="tab_content_2">
+                    <div class="skill-wrapp">
+                        <div class="skill-list">
+                            <div class="skill-name">
+                                <span>Название</span>
+                            </div>
+                        </div>
+                        <div class="skill-list-desc">
+                            <div class="skill-desc">
+                                <span>Очень длинное описание любого скилла из игры</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Inventory -->
+        
+            
+                <div class="tabs_container">
+                    <input class="hide" type="radio" name="tabs" id="tab3"/>
+                    <label for="tab3">Инвентарь</label>
+                    <div class="tab_content" id="tab_content_3">
+                          <div class="inventory-wrapp">
+                            <span>Инвентарь</span>
+                            <div class="inventory-list">
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                                <div class="inventory-slot">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- equipment -->
+
+                <div class="tabs_container">
+                    <input class="hide" type="radio" name="tabs" id="tab4"/>
+                    <label for="tab4">Экипировка</label>
+                    <div class="tab_content" id="tab_content_4">
+                          <div class="equipment-wrapp">
+                            <div class="equipment-list">
+                                <div class="equipment-list-main">
+                                    <div class="equipment-link">
+                                    </div>
+                                    <div class="equipment-link">
+                                    </div>
+                                    <div class="equipment-link">
+                                    </div>
+                                    <div class="equipment-link">
+                                    </div>
+                                    <div class="equipment-link">
+                                    </div>
+                                    <div class="equipment-link">
+                                    </div>
+                                </div>
+                                <div class="equipment-list-art">
+                                </div>
+                                <div class="equipment-list-side">
+                                    <div class="equipment-link">
+                                    </div>
+                                    <div class="equipment-link">
+                                    </div>
+                                    <div class="equipment-link">
+                                    </div>
+                                    <div class="equipment-link">
+                                    </div>
+                                    <div class="equipment-link">
+                                    </div>
+                                    <div class="equipment-link">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Guild -->
+            
+                <div class="tabs_container">
+                    <input class="hide" type="radio" name="tabs" id="tab5"/>
+                    <label for="tab5">Гильдия</label>
+                    <div class="tab_content" id="tab_content_5">
+                          <div class="guild-wrapp">
+                            <div class="guild-list">
+                                <div class="guild-name">
+                                    <span>{name-skill}</span>
+                                </div>
+                                <div class="guild-name">
+                                    <span>Название</span>
+                                </div>
+                                <div class="guild-name">
+                                    <span>Название</span>
+                                </div>
+                                <div class="guild-name">
+                                    <span>Название</span>
+                                </div>
+                            </div>
+                            <div class="guild-list-desc">
+                                <div class="guild-desc">
+                                    <span>Очень длинное описание любого скилла из игры</span>
+                                </div>
+                                <div class="guild-desc">
+                                    <span>Очень длинное описание любого скилла из игры</span>
+                                </div>
+                                <div class="guild-desc">
+                                    <span>Очень длинное описание любого скилла из игры</span>
+                                </div>
+                                <div class="guild-desc">
+                                    <span>Очень длинное описание любого скилла из игры</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Friend -->
+                
+                <div class="tabs_container">
+                    <input class="hide" type="radio" name="tabs" id="tab6"/>
+                    <label for="tab6">Друзья</label>
+                    <div class="tab_content" id="tab_content_6">
+                          <div class="friend-wrapp">
+                            <div class="friend-list">
+                                <div class="friend-name">
+                                    <span>{name-skill}</span>
+                                </div>
+                                <div class="friend-name">
+                                    <span>Имя</span>
+                                </div>
+                                <div class="friend-name">
+                                    <span>Название</span>
+                                </div>
+                                <div class="friend-name">
+                                    <span>Название</span>
+                                </div>
+                            </div>
+                            <div class="friend-list-desc">
+                                <div class="friend-desc">
+                                    <span>Очень длинное описание игрока</span>
+                                </div>
+                                <div class="friend-desc">
+                                    <span>Очень длинное описание любого скилла из игры</span>
+                                </div>
+                                <div class="friend-desc">
+                                    <span>Очень длинное описание любого скилла из игры</span>
+                                </div>
+                                <div class="friend-desc">
+                                    <span>Очень длинное описание любого скилла из игры</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Quest -->
+
+            
+                <div class="tabs_container">
+                    <input class="hide" type="radio" name="tabs" id="tab7"/>
+                    <label for="tab7">Квесты</label>
+                    <div class="tab_content" id="tab_content_7">
+                          
+                    </div>
+                </div>
+
+                <!-- Map -->
+
+                <div class="tabs_container">
+                    <input class="hide" type="radio" name="tabs" id="tab8"/>
+                    <label for="tab8">Карта</label>
+                    <div class="tab_content" id="tab_content_8">
+                          
+                    </div>
+                </div>
+
+                <!-- Map -->
+
+                <div class="tabs_container">
+                    <input class="hide" type="radio" name="tabs" id="tab9"/>
+                    <label for="tab9">Настройки</label>
+                    <div class="tab_content" id="tab_content_9">
+                        <div class="option_wrap">
+                            <form action="php/user/avatar_config.php" method="post" name="form_avatar" class="avatar_form" enctype="multipart/form-data">
+                            <input type="file" name="avatar">
+                            <input type="submit">
+                            <a href='http://ichiru/php/user/exit.php' class='HeaderUserNickname'>Выход</a>
+                        </div>
+                    </div>
+                </div>
+    <?php
+    ?>
+<!--
+{include file="startgame.php"}
+{include file="createpers.php"}
+{include file="mainmenu.php"}
+-->
+
+
+<!-- Stats -->
+
+
+</div>
+
+<script src="js/lib.js"></script>
+<script>
+    jQuery(function($){
+        $.get("{THEME}/images/sprite.svg", function(data) {
+            var div = document.createElement("div");
+            div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
+            document.body.insertBefore(div, document.body.childNodes[0]);
+        });
+    });
+
+</script>
+</body>
+</html>
