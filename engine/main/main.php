@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "D:/os/OSPanel/domains/ichiru/php/user/constant.php";
+include "D:/os/OSPanel/domains/ichiru/engine/user/constant.php";
 //"INNER JOIN 'table1' ..."
 $avatar = $_SESSION['avatar'];
 ?>
