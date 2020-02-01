@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Title</title>
-    <link href="http://ichiru/templates/css/engine.css" type="text/css" rel="stylesheet">
-    <link href="http://ichiru/templates/css/styles.css" type="text/css" rel="stylesheet">
+    <link href="/css/engine.css" type="text/css" rel="stylesheet">
+    <link href="/css/styles.css" type="text/css" rel="stylesheet">
 </head>
-
 <body>
     <div class="stats-wrapp">
 	<div class="stats-wrapp-list">
