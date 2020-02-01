@@ -41,6 +41,7 @@ $avatar = $_SESSION['avatar'];
                         <div class="hp-bar">hp 10/10</div>
                         <div class="mp-bar">mp 10/10</div>
                         <div class="st-bar">st 10/10</div>
+                        <div><?php echo "$expbar%/100%";?></div>
                     </div>
 
                 </div>
@@ -71,7 +72,7 @@ $avatar = $_SESSION['avatar'];
                                     <li class="class">Класс: <?php  echo $user_stats_main['user_class']?></li> 
                                     <li class="inclass">Подкласс: <?php  echo $user_stats_main['user_subclass']?></li>
                                     <li class="race">Раса: <?php  echo $user_stats_main['user_race']?></li>
-                                    <li class="lvl">Уровень: <?php  echo "$lv1 ($exp)"?></li>
+                                    <li class="lvl">Уровень: <?php  echo "$lv1 ($exp/$exp_to_lvl)"?></li>
                                 </ul>
                                 <span>Основные:</span>
                                 <ul>
@@ -130,16 +131,30 @@ $avatar = $_SESSION['avatar'];
                 <label for="tab2">Скиллы</label>
                 <div class="tab_content" id="tab_content_2">
                     <div class="skill-wrapp">
-                        <div class="skill-list">
-                            <div class="skill-name">
-                                <span>Название</span>
+                        <?php
+                        $i = 9;
+                        $w1 = $q_skill_array['1'];
+                        $w2 = $q_skill_array['2'];
+                        $w3 = $q_skill_array['3'];
+                        $w4 = $q_skill_array['4'];
+                        while ( $i <= 10) {
+                            $i++;
+                            echo "
+                            <div class='skill-list'>
+                                <div class='skill-name'>
+                                    <span>$w1</span>
+                                </div>
                             </div>
+                            <div class='skill-list-desc'>
+                                <div class='skill-desc'>
+                                    <span>$w2 <br>$w3 $w4</span>
+
+                                </div>
+                                ";
+                            }//<a href='http://ichiru/engine/user/addskill.php' class='HeaderUserNickname'>Add Skill</a>
+                        ?>
                         </div>
-                        <div class="skill-list-desc">
-                            <div class="skill-desc">
-                                <span>Очень длинное описание любого скилла из игры</span>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -155,6 +170,8 @@ $avatar = $_SESSION['avatar'];
                             <span>Инвентарь</span>
                             <div class="inventory-list">
                                 <div class="inventory-slot">
+                                    <img src="">
+                                    <span>title</span>
                                 </div>
                                 <div class="inventory-slot">
                                 </div>
@@ -420,9 +437,6 @@ $avatar = $_SESSION['avatar'];
                     <label for="tab9">Настройки</label>
                     <div class="tab_content" id="tab_content_9">
                         <div class="option_wrap">
-                            <form action="php/user/avatar_config.php" method="post" name="form_avatar" class="avatar_form" enctype="multipart/form-data">
-                            <input type="file" name="avatar">
-                            <input type="submit">
                             <a href='http://ichiru/engine/user/exit.php' class='HeaderUserNickname'>Выход</a>
                         </div>
                     </div>
