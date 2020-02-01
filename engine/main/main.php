@@ -144,17 +144,17 @@ $avatar = $_SESSION['avatar'];
                                 <div class='skill-name'>
                                     <span>$w1</span>
                                 </div>
-                            </div>
-                            <div class='skill-list-desc'>
-                                <div class='skill-desc'>
-                                    <span>$w2 <br>$w3 $w4</span>
-
+                                    <div class='skill-list-desc'>
+                                    <div class='skill-desc'>
+                                        <span>$w2 <br>$w3 $w4</span>
+    
+                                    </div>
                                 </div>
-                                ";
-                            }//<a href='http://ichiru/engine/user/addskill.php' class='HeaderUserNickname'>Add Skill</a>
+                            </div>";
+                            }//
                         ?>
                         </div>
-
+                    <a href='http://ichiru/engine/user/addskill.php' class='HeaderUserNickname'>Add Skill</a>
                     </div>
                 </div>
             </div>
