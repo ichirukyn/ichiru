@@ -25,6 +25,7 @@ if(($password == $bd['password']) & ($login == $bd['login'])){
     $_SESSION['userlogin'] = $bd['login'];
     $_SESSION['userpass'] = $bd['password'];
     $_SESSION['userid'] = $bd['id'];
+    $_SESSION['userclass'] = $bd['user_class'];
     ?>
     
     <script type="text/javascript">
