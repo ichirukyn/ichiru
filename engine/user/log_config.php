@@ -25,6 +25,7 @@ if(($password == $bd['password']) & ($login == $bd['login'])){
     $_SESSION['userpass'] = $bd['password'];
     $_SESSION['userid'] = $bd['id'];
     ?>
+    
     <script type="text/javascript">
         window.location = "http://ichiru"
     </script> -->
