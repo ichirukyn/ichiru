@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="http://ichiru/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="http://ichiru/templates/css/styles.css">
 </head>
 <header>
     <div class="header_logo">

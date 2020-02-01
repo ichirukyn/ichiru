@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "D:/os/OSPanel/domains/ichiru/engine/constants.php";
-INC_BD();
+include_once 'D:/os/OSPanel/domains/ichiru/bd_connect.php';
 
 if(!empty($_POST['login'])){
     $login = $_POST['login'];

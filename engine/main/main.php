@@ -423,7 +423,7 @@ $avatar = $_SESSION['avatar'];
                             <form action="php/user/avatar_config.php" method="post" name="form_avatar" class="avatar_form" enctype="multipart/form-data">
                             <input type="file" name="avatar">
                             <input type="submit">
-                            <a href='http://ichiru/php/user/exit.php' class='HeaderUserNickname'>Выход</a>
+                            <a href='http://ichiru/engine/user/exit.php' class='HeaderUserNickname'>Выход</a>
                         </div>
                     </div>
                 </div>

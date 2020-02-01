@@ -1,5 +1,4 @@
 <?php
-/*
 //Подключение шапки
 function INC_Header() {
     include_once 'D:/os/OSPanel/domains/ichiru/templates/modules/header.php';
@@ -13,4 +12,4 @@ function INC_Main() {
 //Подключение БД
 function INC_BD() {
     include_once 'D:/os/OSPanel/domains/ichiru/bd_connect.php';
-}*/
+}
