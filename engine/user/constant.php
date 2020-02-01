@@ -1,6 +1,7 @@
 <?php
 session_start();
-include "D:/os/OSPanel/domains/ichiru/bd_connect.php";
+include "D:/os/OSPanel/domains/ichiru/engine/constants.php";
+INC_BD();
 include "D:/os/OSPanel/domains/ichiru/php/user/exp_config.php";
 include "D:/os/OSPanel/domains/ichiru/php/user/stats_config.php";
 //stats

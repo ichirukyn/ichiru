@@ -1,6 +1,6 @@
 [category=13]
-<link href="css/engine.css" type="text/css" rel="stylesheet">
-    <link href="css/styles.css" type="text/css" rel="stylesheet">
+<link href="http://ichiru/templates/css/engine.css" type="text/css" rel="stylesheet">
+    <link href="http://ichiru/templates/css/styles.css" type="text/css" rel="stylesheet">
 <div class="guild-wrapp">
     <div class="guild-list">
     	<div class="guild-name">

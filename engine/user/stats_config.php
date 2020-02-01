@@ -1,6 +1,7 @@
 <?php
 session_start();
-include "D:/os/OSPanel/domains/ichiru/bd_connect.php";
+include "D:/os/OSPanel/domains/ichiru/engine/constants.php";
+INC_BD();
 
 //$query = mysqli_query($bd_connect, "SELECT * FROM `exp` WHERE $_SESSION['userid']");
 

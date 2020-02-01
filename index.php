@@ -1,9 +1,10 @@
 <?php
 session_start();
-if (empty($_SESSION['user_class'])){    
-    include "D:/os/OSPanel/domains/ichiru/templates/header.php";
+include "D:/os/OSPanel/domains/ichiru/engine/constants.php";
+if (empty($_SESSION['user_class'])){
+    INC_Header();
 }
 else{
-    include "D:/os/OSPanel/domains/ichiru/php/page/main.php";
+    INC_Main();
 }
 ?>

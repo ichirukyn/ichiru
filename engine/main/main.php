@@ -10,7 +10,7 @@ $avatar = $_SESSION['avatar'];
     <base href="http://ichiru">
 </head>
 <body>
-<link href="css/styles.css" type="text/css" rel="stylesheet">
+<link href="http://ichiru/templates/css/styles.css" type="text/css" rel="stylesheet">
 
 <header class="header">
 

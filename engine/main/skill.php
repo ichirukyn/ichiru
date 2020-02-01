@@ -1,6 +1,6 @@
 [category=10]
-<link href="css/engine.css" type="text/css" rel="stylesheet">
-    <link href="css/styles.css" type="text/css" rel="stylesheet">
+<link href="http://ichiru/templates/css/engine.css" type="text/css" rel="stylesheet">
+    <link href="http://ichiru/templates/css/styles.css" type="text/css" rel="stylesheet">
 <div class="skill-wrapp">
     <div class="skill-list">
     	<div class="skill-name">
