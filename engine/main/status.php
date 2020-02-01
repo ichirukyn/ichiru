@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Статус</title>
-    <link href="http://ichiru/templates/css/engine.css" type="text/css" rel="stylesheet">
-    <link href="http://ichiru/templates/css/styles.css" type="text/css" rel="stylesheet">
+    <link href="/css/engine.css" type="text/css" rel="stylesheet">
+    <link href="/css/styles.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <div class="stats-wrapp">
@@ -69,7 +68,7 @@ var clicks = 0;
     function incrementClick() {
         clicks += 1;
         document.getElementById("stats-1").innerHTML = clicks;
-    }
+    };
     
     function createCookie(name, value, days) {
     var expires;
@@ -82,7 +81,7 @@ var clicks = 0;
         expires = "";
     }
     document.cookie = name + "=" + value + expires + "; path=/";
-}
+};
     
     
     function getCookie(c_name) {
@@ -98,6 +97,6 @@ var clicks = 0;
         }
     }
     return "";
-}
+};
 </script>
 </bode>

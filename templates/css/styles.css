@@ -88,7 +88,6 @@ form > p{
 }
 form > li > input{
     padding: 5px;
-    color: #000;
 }
 input.submit{
     background: #343436;

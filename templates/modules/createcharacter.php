@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <title>Создание персонажа</title>
-	<link rel="stylesheet" type="text/css" href="http://ichiru/templates/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-	<form action="http://ichiru/engine/user/log_config.php" method="post" name="form_register" class="login-form">
+	<form action="/php/user/log_config.php" method="post" name="form_register" class="login-form">
 	<ul>
 		<li>
 			<label>Имя персонажа</label>

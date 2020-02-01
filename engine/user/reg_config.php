@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "D:/os/OSPanel/domains/ichiru/engine/constants.php";
-include_once 'D:/os/OSPanel/domains/ichiru/bd_connect.php';
+INC_BD();
 
 if(!empty($_POST['login'])){
     $login = $_POST['login'];
@@ -59,6 +59,14 @@ if (($password2 != 1)) {
     $q_stats = mysqli_query($bd_connect, "INSERT INTO `stats` (`user_id`) VALUES ($userid)");
 
     var_dump($q);
+    ?>
+
+
+    <script type="text/javascript">
+    window.location = "http://ichiru"
+    </script>
+    -->
+    <?php
 }
 else{
     echo "Error";

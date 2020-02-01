@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="http://ichiru/templates/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <header>
     <div class="header_logo">
@@ -8,7 +8,7 @@
         <ul class="header_link_log">
             <li>
                 <ul>
-                    <form action="http://ichiru/engine/user/log_config.php" method="post" name="form_register" class="login-form">
+                    <form action="/php/user/log_config.php" method="post" name="form_register" class="login-form">
                     <p>Вход</p>
                     <li>
                         <input type="text" name="login" placeholder="Логин" class="login-input" data-validate>
@@ -22,7 +22,7 @@
         <ul class="header_link_log">
             <li>
                 <ul class="header_box">
-                    <form action="http://ichiru/engine/user/reg_config.php" method="post" name="form_register" class="login-form">
+                    <form action="/php/user/reg_config.php" method="post" name="form_register" class="login-form">
                         <p>Регистрация</p>
                         <li>
                             <input type="text" name="login" placeholder="Логин" class="login-input" data-validate>
