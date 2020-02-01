@@ -11,6 +11,7 @@ $user_stats = mysqli_fetch_array($user_stats_query);
 $user_stats_main_query = mysqli_query($bd_connect, "SELECT * FROM `user`");
 $user_stats_main = mysqli_fetch_array($user_stats_main_query);
 
+
 if (!empty($user_stats['scorestats'])) {
 	
 }
@@ -25,80 +26,33 @@ if (!empty($_SESSION['avatar'])) {
 $user_exp_query = mysqli_query($bd_connect, "SELECT * FROM `exp`");
 $user_exp = mysqli_fetch_array($user_exp_query);
 
-$currentExp = $user_exp['user_exp'];
- 
-for ($i=1; $i < 100; $i *= 3) { 
-	if(($i*50 > $currentExp) && ($i < ($i+1)*$currentExp))
-		{ 
-			$currentLevel = $i/3; break;
-		} 
 
-}
-
-class Model
-{
-    static protected $_exp;
-    static protected $_data;
-    
-    function __construct($user)
-    {
-        self::$_exp = $user->exp;
-        self::$_data = array_reverse(array(
-            1 => 0,
-            2 => 50,
-            3 => 200,
-            4 => 500
-        ), true);
-    }
-    
-    function GetLevel()
-    {
-        foreach(self::$_data AS $level => $max_exp)
-        {
-            if($max_exp <= self::$_exp)
-            {
-                return sprintf('%s уровень', $level);
-            }
-        }
-    }
-    
-    function GetMaxLevel()
-    {
-        return max(array_keys(self::$_data));
-    }
-    
-    function GetExp()
-    {
-        foreach(self::$_data AS $level => $max_exp)
-        {
-            if($this->GetMaxLevel() == $this->GetLevel())
-            {
-                return self::$_exp;
-            }
-            elseif($this->GetLevel() == $level)
-            {
-                return self::$_exp - $max_exp;
-            }
-        }
-    }
-    
-    function GetMaxExp()
-    {
-        foreach(self::$_data AS $level => $max_exp)
-        {
-            if($this->GetLevel() + 1 == $level OR $this->GetMaxLevel() == $this->GetLevel())
-            {
-                return $max_exp;
-            }
-        }
-    }
-    
-    function GetPercent()
-    {
-        return ($this->GetExp() * 100 / $this->GetMaxExp());
-    }
-} 
+$exp = $user_exp['user_exp'];
+$lvl_u = $exp = $user_exp['user_exp'];
+$id = $_SESSION['user_id'];
 
 
+$query = "SELECT MAX(t.lvl) FROM (SELECT lvl FROM levels WHERE exp_total - $exp <= 0) t";
+$q_2 = mysqli_query($bd_connect,"SELECT `levels`.`exp_to_lvl` FROM `levels` JOIN `users` ON users.lvl = levels.lvl users.id = $id");
+$q_3 = mysqli_query($bd_connect,"SELECT $exp - exp_total FROM levels WHERE lvl = $lvl_u");
 
+
+$q = mysqli_query($bd_connect,$query);
+$lv11 = mysqli_fetch_array($q);
+$lv1 = $lv11["MAX(t.lvl)"];
+
+
+$expbar = round(($exp_at_lvl/$exp_to_lvl) * 100);
+/*
+$lvl = 1;
+$a = 1.4;
+$totalexp = 0;
+
+/*echo '<table border="1"><tr><td>Уровень</td><td>Всего опыта</td><td>Опыта до<br />следующего уровня</td></tr>';
+while ($lvl < 100) {
+    $y = round(pow(($lvl * 10), $a));
+    echo '<tr><td>'.$lvl.'</td><td>'.$totalexp.'</td><td>'.$y.'</td></tr>';
+    $totalexp += $y;
+    $lvl++;
+}*/
 ?>

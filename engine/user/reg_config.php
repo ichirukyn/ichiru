@@ -51,9 +51,8 @@ if (($password2 != 1)) {
     $userid = $checkuserid['user_id'];
     $_SESSION['userid'] = $checkuserid['user_id'];
     $_SESSION['userclass'] = $checkuserid['user_class'];
-    $user_exp = 0;
 
-    $q_exp = mysqli_query($bd_connect, "INSERT INTO `exp` (`user_id`, `user_exp`) VALUES ($userid, $user_exp)");
+    $q_exp = mysqli_query($bd_connect, "INSERT INTO `exp` (`user_id`) VALUES ($userid)");
     
     //stats
     $q_stats = mysqli_query($bd_connect, "INSERT INTO `stats` (`user_id`) VALUES ($userid)");
