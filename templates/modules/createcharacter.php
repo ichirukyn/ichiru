@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="http://ichiru/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="http://ichiru/templates/css/styles.css">
 </head>
 <body>
 	<form action="/php/user/log_config.php" method="post" name="form_register" class="login-form">
-	<ul>
+	<ul class="form-add">
 		<li>
 			<label>Имя персонажа</label>
 			<input type="text" name="" placeholder="Имя персонажа" class="input" data-validate>

@@ -18,13 +18,13 @@ li{
     text-decoration: none;
 }
 li{
-    font-size:21px;
-    list-style:none;
+    /* font-size: 21px; */
+    list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
-    margin: 10px;
+    /* margin: 10px; */
 }
 input{
     color:#fff;
@@ -508,4 +508,14 @@ display: block;
 }
 label{
     padding: 5px;
+}
+/* 
+ul.form-add > li{
+    /* font-size: 21px; */
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    /* margin: 10px;
 }
