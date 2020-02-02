@@ -67,7 +67,7 @@ $skiil_bd_main = mysqli_query($bd_connect, "SELECT * FROM skills WHERE  skill_id
 $q_skill_array = mysqli_fetch_array($skiil_bd_main);
 
 //print_r($skiil_bd_main["num_rows"]);
-//var_dump($q_skill_array);
+//var_dump($user_stats);
 
 
 //Бросание кубика

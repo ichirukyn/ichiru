@@ -76,19 +76,19 @@ $avatar = $_SESSION['avatar'];
                                 </ul>
                                 <span>Характеристики:</span>
                                 <ul>
-                                    <li class="specifications">Сила: <?php  $user_stats['str']?></li>
-                                    <li class="specifications">Скорость: <?php  echo $user_stats_main['user_class']?></li>
+                                    <li class="specifications">Сила: <?php  echo $user_stats["str"]?></li>
+                                    <li class="specifications">Скорость: <?php  echo $user_stats['speed']?></li>
                                     <li class="specifications">Ловкость: <?php  echo $user_stats['dexterity']?></li>
                                     <li class="specifications">Выносливость: <?php  echo $user_stats['stamina']?></li>
-                                    <li class="specifications">Стойкость: <?php  echo $user_stats_main['user_class']?></li>
-                                    <li class="specifications">Рефлексы: <?php  echo $user_stats_main['user_class']?></li>
-                                    <li class="specifications">Меткость: <?php  echo $user_stats_main['user_class']?></li>
+                                    <li class="specifications">Стойкость: <?php  echo $user_stats['durability']?></li>
+                                    <li class="specifications">Рефлексы: <?php  echo $user_stats['reflexes']?></li>
+                                    <li class="specifications">Меткость: <?php  echo $user_stats['accuracy']?></li>
                                     <li class="specifications">Интеллект: <?php  echo $user_stats['intelligence']?></li>
                                     <li class="specifications">Мудрость: <?php  echo $user_stats['wisdom']?></li>
-                                    <li class="specifications">Интуиция: <?php  echo $user_stats_main['user_class']?></li>
-                                    <li class="specifications">Память: <?php  echo $user_stats_main['user_class']?></li>
+                                    <li class="specifications">Интуиция: <?php  echo $user_stats['intuition']?></li>
+                                    <li class="specifications">Память: <?php  echo $user_stats['memory']?></li>
                                     <li class="specifications">Харизма: <?php  echo $user_stats['charisma']?></li>
-                                    <li class="specifications">Дух: <?php  echo $user_stats['will']?></li>
+                                    <li class="specifications">Дух: <?php  echo $user_stats['mind']?></li>
                                     <li class="specifications">Удача: <?php  echo $user_stats['lucky']?></li>
                                 </ul>
                             </div>
