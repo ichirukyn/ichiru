@@ -24,8 +24,8 @@
 		<li class="select">
 			<label>раса</label>
 			<select name="race" form="form_addcharacter" size = "1" required>
-			    <option value="Эльф">Эльф</option>
-			    <option value="Дворф">Дворф</option>
+			    <option value="high elf">Высший Эльф</option>
+			    <option value="Лесной эльф">Лесной эльф</option>
 			    <option value="Гном">Гном</option>
 			    <option value="Полурослик">Полурослик</option>
 		   </select>
