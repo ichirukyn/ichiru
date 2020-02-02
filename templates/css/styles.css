@@ -133,19 +133,19 @@ padding:5px;
 }
 .hp-bar{
     margin: 2px;
-    background: red;
+    background: #FF1828;
     width: 120px;
     height: 15px;
 }
 .mp-bar{
     margin: 2px;
-    background: blue;
+    background: #000BDB;
     width: 120px;
     height: 15px;
 }
 .st-bar{
     margin: 2px;
-    background: green;
+    background: #0AD902;
     width: 120px;
     height: 15px;
 }
@@ -260,7 +260,7 @@ ul{
     width: 100px;
     height: 100px;
     background: #666;
-    margin: 5px;
+    margin: 10px 0px 10px 10px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -291,6 +291,9 @@ ul{
     margin: 6px;
     width: 60px;
     height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .inventory-slot:hover{
 -webkit-box-shadow: 0px 0px 8px 4px rgba(214,214,214,1);
@@ -355,30 +358,38 @@ cursor: pointer
     justify-content: flex-start;
 }
 .guild-list{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+.guild-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
 .guild-name{
-   display: flex;
     width: 100px;
     height: 100px;
+    margin: 10px 0px 10px 10px;
     background: #666;
-    margin: 5px;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 .guild-desc{
-    display: flex;
     width: 100%;
     height: 100px;
 	margin: 10px;
     background: #666;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 /* Start-game-menu*/
 
