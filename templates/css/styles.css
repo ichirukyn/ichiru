@@ -4,7 +4,6 @@
 * {
     margin: 0;
     padding: 0;
-    color: #fff;
 }
 body {
     width: 100%;
@@ -29,9 +28,6 @@ li{
     /* align-items: center; */
     justify-content: center;
     /* margin: 10px; */
-}
-input{
-    color:#fff;
 }
 img{
     margin: 10px;
@@ -97,6 +93,7 @@ form > li > input{
 input.submit{
     background: #343436;
     border: #343436;
+    padding: 5px;
 }
 input.submit:focus{
     border: #343436;
@@ -222,14 +219,14 @@ span{
     padding: 10px;
     box-sizing: border-box;
 }
-ul{
+/*ul{
     margin-left: 10px;
     font-size: 17px;
 	display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-}
+}*/
 .general-stats li{
 	margin: 6px;
 }
@@ -528,6 +525,23 @@ display: block;
 label{
     padding: 5px;
 }
+
+/* addcharacter */
+option{
+    padding: 2px;
+}
+option:focus-within{
+    padding: 2px;
+    border: #343436;
+    background: #343436;
+    color: #fff;
+}
+input.input{
+    padding: 5px;
+}
+
+
+
 /*
 ul.form-add > li{
     font-size: 21px;
