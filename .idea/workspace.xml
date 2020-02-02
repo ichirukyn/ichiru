@@ -46,6 +46,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
@@ -75,6 +76,7 @@
       <updated>1580307843713</updated>
       <workItem from="1580307845123" duration="1683000" />
       <workItem from="1580551084338" duration="1993000" />
+      <workItem from="1580634711013" duration="2289000" />
     </task>
     <servers />
   </component>
@@ -86,7 +88,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
