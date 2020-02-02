@@ -4,7 +4,7 @@ session_start();
 if (empty($_SESSION['userid'])){
     include "D:/os/OSPanel/domains/ichiru/templates/modules/header.php";
 }
-else if (empty($_SESSION['userclass'])) {
+else if (empty($_SESSION['user_class'])) {
 	include "D:/os/OSPanel/domains/ichiru/templates/modules/createcharacter.php";
 }
 else{
