@@ -55,7 +55,7 @@ $q_3 = mysqli_query($bd_connect,"SELECT * FROM `levels` WHERE lvl = '$level'");
 $q_3_array = mysqli_fetch_array($q_3);
 $exp_total = $q_3_array["exp_total"];
 
-//var_dump($q_3_array);
+//
 
 
 //skill
@@ -66,8 +66,8 @@ $skiil_id_main = $skill_bd_check["skill_id"];
 $skiil_bd_main = mysqli_query($bd_connect, "SELECT * FROM skills WHERE  skill_id = '$skiil_id_main'");
 $q_skill_array = mysqli_fetch_array($skiil_bd_main);
 
-
-
+//print_r($skiil_bd_main["num_rows"]);
+//var_dump($q_skill_array);
 
 
 //Бросание кубика

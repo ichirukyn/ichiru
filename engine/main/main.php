@@ -74,33 +74,23 @@ $avatar = $_SESSION['avatar'];
                                     <li class="race">Раса: <?php  echo $user_stats_main['user_race']?></li>
                                     <li class="lvl">Уровень: <?php  echo "$lv1 ($exp/$exp_total)"?></li>
                                 </ul>
-                                <span>Основные:</span>
+                                <span>Характеристики:</span>
                                 <ul>
-                                    <div class="text-status">
-                                        <li class="str">Сила:</li>
-                                        <li id="stats-1"><?php  echo $user_stats['str']?></li> <button type="button" onClick="incrementClick()"></button>
-                                    </div>
-                                    <div class="text-status">
-                                        <li class="stamina">Выносливость:<li>
-                                        <li class="stats-1"><?php  echo $user_stats['stamina']?></li> <li class="plus-stats"></li>
-                                    </div>
-                                    <div class="text-status">
-                                        <li class="dexterity">Ловкость:<li>
-                                        <li class="stats-1"><?php  echo $user_stats['dexterity']?></li> <li class="plus-stats"></li>
-                                    </div>
-                                    <div class="text-status">
-                                        <li class="intelligence">Интелект:<li>
-                                        <li class="stats-1"><?php  echo $user_stats['intelligence']?></li> <li class="plus-stats"></li>
-                                    </div>
+                                    <li class="specifications">Сила: <?php  $user_stats['str']?></li>
+                                    <li class="specifications">Скорость: <?php  echo $user_stats_main['user_class']?></li>
+                                    <li class="specifications">Ловкость: <?php  echo $user_stats['dexterity']?></li>
+                                    <li class="specifications">Выносливость: <?php  echo $user_stats['stamina']?></li>
+                                    <li class="specifications">Стойкость: <?php  echo $user_stats_main['user_class']?></li>
+                                    <li class="specifications">Рефлексы: <?php  echo $user_stats_main['user_class']?></li>
+                                    <li class="specifications">Меткость: <?php  echo $user_stats_main['user_class']?></li>
+                                    <li class="specifications">Интеллект: <?php  echo $user_stats['intelligence']?></li>
+                                    <li class="specifications">Мудрость: <?php  echo $user_stats['wisdom']?></li>
+                                    <li class="specifications">Интуиция: <?php  echo $user_stats_main['user_class']?></li>
+                                    <li class="specifications">Память: <?php  echo $user_stats_main['user_class']?></li>
+                                    <li class="specifications">Харизма: <?php  echo $user_stats['charisma']?></li>
+                                    <li class="specifications">Дух: <?php  echo $user_stats['will']?></li>
+                                    <li class="specifications">Удача: <?php  echo $user_stats['lucky']?></li>
                                 </ul>
-                                <span>Побочные:</span>
-                                <ul>
-                                    <li class="wisdom">Мудрость: <?php  echo $user_stats['wisdom']?></li>
-                                    <li class="will">Воля: <?php  echo $user_stats['will']?></li>
-                                    <li class="charisma">Харизма: <?php  echo $user_stats['charisma']?></li>
-                                    <li class="lucky">Удача: <?php  echo $user_stats['lucky']?></li>
-                                </ul>
-                                <span>Очки Характеристик: <?php  echo $user_stats['scorestats']?></span>
                             </div>
                         </div>
                         <div class="general-stats">
@@ -151,7 +141,8 @@ $avatar = $_SESSION['avatar'];
                                     </div>
                                 </div>
                             </div>";
-                            }//
+                            }//var_dump($skiil_bd_main["num_rows"]);
+
                         ?>
                         </div>
                     <a href='http://ichiru/engine/user/addskill.php' class='HeaderUserNickname'>Add Skill</a>

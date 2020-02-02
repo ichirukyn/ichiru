@@ -16,32 +16,32 @@
                 <li class="lvl">Уровень:</li>
             </ul>
             <span>Основные:</span>
-            <ul>
-                <div class="text-status">
-                    <li class="str">Сила:</li>
-                    <li id="stats-1"><?php  echo $_SESSION['login']?></li> <button type="button" onClick="incrementClick()">+</button>
-				</div>
-                <div class="text-status">
-                	<li class="stamina">Выносливость:<li>
-                	<li class="stats-1"><?php  echo $_SESSION['login']?></li> <li class="plus-stats">+</li>
-				</div>
-				<div class="text-status">
-                	<li class="dexterity">Ловкость:<li>
-                	<li class="stats-1"><?php  echo $_SESSION['login']?></li> <li class="plus-stats">+</li>
-				</div>
-				<div class="text-status">
-                	<li class="intelligence">Интелект:<li>
-                	<li class="stats-1"><?php  echo $_SESSION['login']?></li> <li class="plus-stats">+</li>
-				</div>
-            </ul>
-            <span>Побочные:</span>
-            <ul>
-                <li class="wisdom">Мудрость:</li>
-                <li class="will">Воля:</li>
-                <li class="charisma">Харизма:</li>
-                <li class="lucky">Удача:</li>
-            </ul>
-            <span>Очки Характеристик:</span>
+                                <ul>
+                                    <div class="text-status">
+                                        <li class="str">Сила:</li>
+                                        <li id="stats-1"><?php  echo $user_stats['str']?></li> <button type="button" onClick="incrementClick()"></button>
+                                    </div>
+                                    <div class="text-status">
+                                        <li class="stamina">Выносливость:<li>
+                                        <li class="stats-1"><?php  echo $user_stats['stamina']?></li> <li class="plus-stats"></li>
+                                    </div>
+                                    <div class="text-status">
+                                        <li class="dexterity">Ловкость:<li>
+                                        <li class="stats-1"><?php  echo $user_stats['dexterity']?></li> <li class="plus-stats"></li>
+                                    </div>
+                                    <div class="text-status">
+                                        <li class="intelligence">Интелект:<li>
+                                        <li class="stats-1"><?php  echo $user_stats['intelligence']?></li> <li class="plus-stats"></li>
+                                    </div>
+                                </ul>
+                                <span>Побочные:</span>
+                                <ul>
+                                    <li class="wisdom">Мудрость: <?php  echo $user_stats['wisdom']?></li>
+                                    <li class="will">Воля: <?php  echo $user_stats['will']?></li>
+                                    <li class="charisma">Харизма: <?php  echo $user_stats['charisma']?></li>
+                                    <li class="lucky">Удача: <?php  echo $user_stats['lucky']?></li>
+                                </ul>
+                                <span>Очки Характеристик: <?php  echo $user_stats['scorestats']?></span>
         </div>
 	</div>
     <div class="general-stats">
