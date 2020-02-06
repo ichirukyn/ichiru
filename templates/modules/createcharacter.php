@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="http://ichiru/templates/css/styles.css">
 </head>
-<body>
+<body style="background: #343436;">
 	<form action="/engine/user/addcharacter_config.php" method="post" name="form_addcharacter" class="form_addcharacter" id="form_addcharacter">
 	<ul class="form-add">
 		<li>
@@ -25,51 +25,54 @@
 			<label>раса</label>
 			<select name="race" form="form_addcharacter" size = "1" required>
 			    <option value="high elf">Высший Эльф</option>
-			    <option value="Лесной эльф">Лесной эльф</option>
-			    <option value="Гном">Гном</option>
-			    <option value="Полурослик">Полурослик</option>
-		   </select>
-		</li>
-		<li class="select">
-			<label>Класс</label>
-			<select name="class" form="form_addcharacter"size = "1" required>
-			    <option value="Воин">Воин</option>
-			    <option value="Маг">Маг</option>
-			    <option value="Лучник">Лучник</option>
-			    <option value="Вор">Вор</option>
+			    <option value="forest elf">Лесной эльф</option>
+			    <option value="night elf">Ночной эльф</option>
+			    <option value="dark elf">Тёмный эльф</option>
+			    <option value="grey elf">Серый Эльф</option>
+			    <option value="sun elf">Солнечный эльф</option>
+			    <option value="sand elf">Песчаный эльф</option>
+			    <option value="sea elf">Морской эльф</option>
+			    <option value="snow elf">Снежный эльф</option>
+			    <option value="blood elf">Кровавый Эльф</option>
+			    <option value="ork">Орк</option>
+			    <option value="dvorf">Дворф</option>
+			    <option value="gnom">Гном</option>
+			    <option value="semicircular">Полурослик</option>
 		   </select>
 		</li>
 		<li>
 			<label>Характер</label>
 			<select name="character" form="form_addcharacter" size = "1" required>
-			    <option value="1">1</option>
-			    <option value="2">2</option>
-			    <option value="3">3</option>
-			    <option value="4">4</option>
+			    <option value="Добропорядочный">Добропорядочный</option>
+			    <option value="Нейтральный">Нейтральный</option>
+			    <option value="Злонамерный">Злонамерный</option>
 		   </select>
 		</li>
 		<li>
 			<label>Внешность</label>
 			<select name="face" form="form_addcharacter" size = "1" required>
-			    <option value="В ближайшем будущем..">В ближайшем будущем..</option>
+			    <option value="В ближайшем будущем.."><img src="/uploads/avatar/ichiru_1570342269.jpg"></option>
+			    <option value="В ближайшем будущем.."><img src="/uploads/avatar/ichiru_592d00605e043.jpg"></option>
+			    <option value="В ближайшем будущем.."><img src="/uploads/avatar/ichiru_avatar.jpg"></option>
 		   </select>
 		</li>
 		<li>
 			<label>Мировозрение</label>
 			<select name="worldview" form="form_addcharacter" size = "1" required>
-			    <option value="1">1</option>
-			    <option value="2">2</option>
-			    <option value="3">3</option>
-			    <option value="4">4</option>
+			    <option value="научное">научное</option>
+			    <option value="суеверное">суеверное</option>
+			    <option value="обыденное">обыденное</option>
+			    <option value="религиозное">религиозное</option>
+			    <option value="философское">философское</option>
 		   </select>
 		</li>
  		 <li>
 			<label>Жизненная цель</label>
 			<select name="life goal" form="form_addcharacter" size = "1" required>
-			    <option value="Стать богом">Стать богом</option>
-			    <option value="Заработать много денег">Заработать много денег</option>
-			    <option value="Гарем!!!">Гарем!!!</option>
-			    <option value="Все выше перечисленное">Все выше перечисленное</option>
+			    <option value=""></option>
+			    <option value=""></option>
+			    <option value=""></option>
+			    <option value=""></option>
 		   </select>
 		</li>
  		 <li>
@@ -91,7 +94,15 @@
 		</li>
   		<li>
 			<label>Магия, активные способности, пассивные способности, расовые способности</label>
-			<select multiple name="skill" form="form_addcharacter" required>
+			<select multiple size="6" name="skill" form="form_addcharacter" required>
+			    <option value="Боевые искусства">Боевые искусства</option>
+			    <option value="Парирование">Парирование</option>
+			    <option value="Магическое мастерство">Магическое мастерство</option>
+			    <option value="Скрытность">Скрытность</option>
+			    <option value="Боевые искусства">Боевые искусства</option>
+			    <option value="Парирование">Парирование</option>
+			    <option value="Магическое мастерство">Магическое мастерство</option>
+			    <option value="Скрытность">Скрытность</option>
 			    <option value="Боевые искусства">Боевые искусства</option>
 			    <option value="Парирование">Парирование</option>
 			    <option value="Магическое мастерство">Магическое мастерство</option>
@@ -122,10 +133,13 @@
 			    <option value="Ученик академии">Ученик академии</option>
 			    <option value="Сын кузнеца">Сын кузнеца</option>
 			    <option value="Бежавший дворянин">Бежавший дворянин</option>
-			    <option value="Ангел спустившийся с небес">Ангел спустившийся с небес</option>
+			    <option value=""></option>
 		   </select>
 		</li>
-  	<input type="submit"/>
+		<li class="exit_add">
+		  	<a href='http://ichiru/engine/user/exit.php' class='HeaderUserNickname'>Назад</a>
+  			<input type="submit" class="submit" />
+		</li>
 	</ul>
 	</form>
 </body>

@@ -1,5 +1,5 @@
 <?php
-$race = $arrayName = array('high elf' => [
+/*$race = $arrayName = array('high elf' => [
 	'str' => 1,
 	'speed' => 1,
 	'dexterity' => 1,
@@ -35,11 +35,12 @@ $race = $arrayName = array('high elf' => [
 	'hp' => 100,
 	'mp' => 90,
 	'st' => 110]);
-
+*/
 
 
 
 $race = $arrayName = array('high elf' => [
+	'race'=> 'Высший эльф',
 	'str' => 1,
 	'speed' => 1,
 	'dexterity' => 1,
@@ -58,6 +59,7 @@ $race = $arrayName = array('high elf' => [
 	'mp' => 120,
 	'st' => 90],
 	'forest elf' => [
+	'race'=> 'Лесной эльф',
 	'str' => 2,
 	'speed' => 1,
 	'dexterity' => 3,
@@ -76,6 +78,7 @@ $race = $arrayName = array('high elf' => [
 	'mp' => 90,
 	'st' => 110],
 	'night elf' => [
+	'race'=> 'Ночной эльф',
 	'str' => 1,
 	'speed' => 1,
 	'dexterity' => 1,
@@ -94,6 +97,7 @@ $race = $arrayName = array('high elf' => [
 	'mp' => 120,
 	'st' => 60],
 	'dark elf' => [
+	'race'=> 'Тёмный эльф',
 	'str' => 1,
 	'speed' => 1,
 	'dexterity' => 2,
@@ -112,6 +116,7 @@ $race = $arrayName = array('high elf' => [
 	'mp' => 110,
 	'st' => 100],
 	'grey elf' => [
+	'race'=> 'Серый Эльф',
 	'str' => 1,
 	'speed' => 1,
 	'dexterity' => 1,
@@ -130,6 +135,7 @@ $race = $arrayName = array('high elf' => [
 	'mp' => 120,
 	'st' => 90],
 	'sun elf' => [
+	'race'=> 'Солнечный эльф',
 	'str' => 1,
 	'speed' => 1,
 	'dexterity' => 1,
@@ -148,6 +154,7 @@ $race = $arrayName = array('high elf' => [
 	'mp' => 120,
 	'st' => 90],
 	'sand elf' => [
+	'race'=> 'Песчаный эльф',
 	'str' => 1,
 	'speed' => 1,
 	'dexterity' => 1,
@@ -166,6 +173,7 @@ $race = $arrayName = array('high elf' => [
 	'mp' => 90,
 	'st' => 110],
 	'sea elf' => [
+	'race'=> 'Морской эльф',
 	'str' => 1,
 	'speed' => 1,
 	'dexterity' => 1,
@@ -183,12 +191,51 @@ $race = $arrayName = array('high elf' => [
 	'hp' => 90,
 	'mp' => 100,
 	'st' => 110],
-	'forest elf' => [
+	'snow elf' => [
+	'race'=> 'Снежный эльф',
+	'str' => 1,
+	'speed' => 1,
+	'dexterity' => 1,
+	'stamina' => 2,
+	'durability' => 1,
+	'reflexes' => 1,
+	'accuracy' => 1,
+	'intelligence' => 2,
+	'wisdom' => 2,
+	'intuition' => 1,
+	'memory' => 1,
+	'charisma' => 1,
+	'mind' => 3,
+	'lucky' => 1,
+	'hp' => 90,
+	'mp' => 100,
+	'st' => 110],
+	'blood elf' => [
+	'race'=> 'Кровавый эльф',
 	'str' => 2,
 	'speed' => 1,
 	'dexterity' => 1,
-	'stamina' => 1,
+	'stamina' => 2,
 	'durability' => 1,
+	'reflexes' => 1,
+	'accuracy' => 1,
+	'intelligence' => 2,
+	'wisdom' => 1,
+	'intuition' => 1,
+	'memory' => 1,
+	'charisma' => 1,
+	'mind' => 3,
+	'lucky' => 1,
+	'hp' => 100,
+	'mp' => 110,
+	'st' => 90],
+	'ork' => [
+	'race'=> 'Орк',
+	'str' => 3,
+	'speed' => 1,
+	'dexterity' => 1,
+	'stamina' => 2,
+	'durability' => 2,
 	'reflexes' => 1,
 	'accuracy' => 1,
 	'intelligence' => 1,
@@ -196,16 +243,55 @@ $race = $arrayName = array('high elf' => [
 	'intuition' => 1,
 	'memory' => 1,
 	'charisma' => 1,
-	'mind' => 1,
+	'mind' => 2,
 	'lucky' => 1,
-	'hp' => 1,
-	'mp' => 1,
-	'st' => 1],
-	'forest elf' => [
+	'hp' => 120,
+	'mp' => 60,
+	'st' => 120],
+	'dvorf' => [
+	'race'=> 'Дворф',
 	'str' => 2,
 	'speed' => 1,
 	'dexterity' => 1,
+	'stamina' => 3,
+	'durability' => 2,
+	'reflexes' => 1,
+	'accuracy' => 1,
+	'intelligence' => 2,
+	'wisdom' => 1,
+	'intuition' => 1,
+	'memory' => 1,
+	'charisma' => 1,
+	'mind' => 3,
+	'lucky' => 1,
+	'hp' => 110,
+	'mp' => 70,
+	'st' => 120],
+	'gnom' => [
+	'race'=> 'Гном',
+	'str' => 1,
+	'speed' => 1,
+	'dexterity' => 1,
 	'stamina' => 1,
+	'durability' => 1,
+	'reflexes' => 1,
+	'accuracy' => 1,
+	'intelligence' => 3,
+	'wisdom' => 2,
+	'intuition' => 2,
+	'memory' => 1,
+	'charisma' => 1,
+	'mind' => 2,
+	'lucky' => 1,
+	'hp' => 100,
+	'mp' => 110,
+	'st' => 90],
+	'semicircular' => [
+	'race'=> 'Полурослик',
+	'str' => 1,
+	'speed' => 3,
+	'dexterity' => 2,
+	'stamina' => 2,
 	'durability' => 1,
 	'reflexes' => 1,
 	'accuracy' => 1,
@@ -213,15 +299,17 @@ $race = $arrayName = array('high elf' => [
 	'wisdom' => 1,
 	'intuition' => 1,
 	'memory' => 1,
-	'charisma' => 1,
+	'charisma' => 2,
 	'mind' => 1,
 	'lucky' => 1,
-	'hp' => 1,
-	'mp' => 1,
-	'st' => 1],
+	'hp' => 100,
+	'mp' => 80,
+	'st' => 120]	
+
+);
 	
 
-*/
+
 /*str
 speed
 dexterity
