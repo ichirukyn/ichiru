@@ -527,6 +527,7 @@ $avatar = $_SESSION['avatar'];
 
 </div>
 
+
 <script src="js/lib.js"></script>
 <script>
     jQuery(function($){
@@ -539,4 +540,9 @@ $avatar = $_SESSION['avatar'];
 
 </script>
 </body>
+<footer>
+    <dir>
+        
+    </dir>
+</footer>
 </html>
