@@ -15,15 +15,17 @@ $user_stats = mysqli_fetch_array($user_stats_query);
 $user_stats_main_query = mysqli_query($bd_connect, "SELECT * FROM `user` WHERE `user_id` = '$id'");
 $user_stats_main = mysqli_fetch_array($user_stats_main_query);
 
-//var_dump($user_stats_main);
+//var_dump($_SESSION["avatar"]);
 if (!empty($user_stats['scorestats'])) {
 	
 }
 
 
-//var_dump($);
+//
 
 //useravatar
+
+
 /*
 if (!empty($_SESSION['avatar'])) {
 	$avatar = $avatarrow;
@@ -60,15 +62,15 @@ $exp_total = $q_3_array["exp_total"];
 */
 //skill
 
-$skill_bd = mysqli_query($bd_connect, "SELECT * FROM user_skill WHERE user_id = '$id'");
-$skill_bd_check = mysqli_fetch_array($skill_bd);
-$skill_rows = mysqli_num_rows($skill_bd);
-$skill_id_main = $skill_bd_check["skill_id"];
-$skill_bd_main = mysqli_query($bd_connect, "SELECT * FROM skills WHERE  skill_id = '$skill_id_main'");
-$q_skill_array = mysqli_fetch_array($skill_bd_main);
+$skill_bd = mysqli_query($bd_connect, "SELECT * FROM user_skill WHERE user_id = '$id' ORDER BY `skill_id` DESC");
+//$skill_bd_check = mysqli_fetch_array($skill_bd);
+//$skill_rows = mysqli_num_rows($skill_bd);
+//$skill_id_main = $skill_bd_check["skill_id"];
+
 //$skill_row = mysqli_fetch_row($skill_bd_main);
 //print_r($skiil_bd_main["num_rows"]);
-//var_dump($skill_bd_main);
+
+//var_dump($skill_bd_check);
 
 /*$i = 21;
 while ($i <= 50) {

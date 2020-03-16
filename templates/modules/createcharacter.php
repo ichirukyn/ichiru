@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="http://ichiru/templates/css/styles.css">
 </head>
 <body style="background: #343436;">
-	<form action="/engine/user/addcharacter_config.php" method="post" name="form_addcharacter" class="form_addcharacter" id="form_addcharacter">
+	<form enctype="multipart/form-data" action="/engine/user/addcharacter_config.php" method="post" name="form_addcharacter" class="form_addcharacter" id="form_addcharacter">
 	<ul class="form-add">
 		<li>
 			<label>Имя</label>
@@ -50,11 +50,7 @@
 		</li>
 		<li>
 			<label>Внешность</label>
-			<select name="face" form="form_addcharacter" size = "1" required>
-			    <option value="В ближайшем будущем.."><img src="/uploads/avatar/ichiru_1570342269.jpg"></option>
-			    <option value="В ближайшем будущем.."><img src="/uploads/avatar/ichiru_592d00605e043.jpg"></option>
-			    <option value="В ближайшем будущем.."><img src="/uploads/avatar/ichiru_avatar.jpg"></option>
-		   </select>
+			<input type="file" name="avatar" required>
 		</li>
 		<li>
 			<label>Мировозрение</label>
@@ -95,14 +91,6 @@
   		<li>
 			<label>Магия, активные способности, пассивные способности, расовые способности</label>
 			<select multiple size="6" name="skill" form="form_addcharacter" required>
-			    <option value="Боевые искусства">Боевые искусства</option>
-			    <option value="Парирование">Парирование</option>
-			    <option value="Магическое мастерство">Магическое мастерство</option>
-			    <option value="Скрытность">Скрытность</option>
-			    <option value="Боевые искусства">Боевые искусства</option>
-			    <option value="Парирование">Парирование</option>
-			    <option value="Магическое мастерство">Магическое мастерство</option>
-			    <option value="Скрытность">Скрытность</option>
 			    <option value="Боевые искусства">Боевые искусства</option>
 			    <option value="Парирование">Парирование</option>
 			    <option value="Магическое мастерство">Магическое мастерство</option>

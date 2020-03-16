@@ -7,7 +7,6 @@ $avatar = $_SESSION['avatar'];
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <base href="http://ichiru">
 </head>
 <body>
 <link href="http://ichiru/templates/css/styles.css" type="text/css" rel="stylesheet">
@@ -24,8 +23,7 @@ $avatar = $_SESSION['avatar'];
                         <?php 
                         if (empty($avatar)) {
                             ?>
-                            <img src="uploads/logo/logo.jpg" />
-                        </form>
+                            <img src="<?php  echo $avatar; ?>"/>
                         <?php
                         }
                         else{
@@ -71,14 +69,13 @@ $avatar = $_SESSION['avatar'];
                                     <li class="stats-link">Имя: <?php  echo $user_stats_main['name']?></li> 
                                     <li class="stats-link">Возраст: <?php  echo $user_stats_main['age']?></li>
                                     <li class="stats-link">Пол: <?php  echo $user_stats_main['user_genre']?></li>
-                                    <li class="stats-link">Уровень:<?php  //echo "$lv1 ($exp/$exp_total)"?></li>
+                                    <li class="stats-link">Уровень: <?php  echo $user_stats_main["lvl"] //"$lv1 ($exp/$exp_total)"?></li>
                                     <li class="stats-link">Раса: <?php  echo $user_stats_main['user_race']?></li>
                                     <li class="stats-link">Характер: <?php  echo $user_stats_main['character']?></li>
-                                    <li class="stats-link">Внешность: <?php  echo $user_stats_main['face']?></li>
                                     <li class="stats-link">Мировозрение: <?php  echo $user_stats_main['worldview']?></li>
-                                    <li class="stats-link">Жизненная цель: <?php  echo $user_stats_main['life_goal']?><li>
+                                    <!--<li class="stats-link">Жизненная цель: <?php  echo $user_stats_main['life_goal']?><li>-->
                                     <li class="stats-link">Хобби: <?php  echo $user_stats_main['hobby']?></li>
-                                    <li class="stats-link">Языки: <?php  echo $user_stats_main['language']?></li>
+                                    <!--<li class="stats-link">Языки: <?php  echo $user_stats_main['language']?></li>-->
                                     <li class="stats-link">Отношения с другими расами: <?php  echo $user_stats_main['relations']?></li>
                                     <li class="stats-link">Предыстория: <?php  echo $user_stats_main['prehistory']?></li>
                                 </ul>
@@ -87,22 +84,57 @@ $avatar = $_SESSION['avatar'];
                         <div class="general-stats">
                             <span>Характеристики:</span>
                             <ul class="stats_ul">
-                                <li class="specifications">Сила: <?php  echo $user_stats["str"]?></li>
-                                <li class="specifications">Скорость: <?php  echo $user_stats['speed']?></li>
-                                <li class="specifications">Ловкость: <?php  echo $user_stats['dexterity']?></li>
-                                <li class="specifications">Выносливость: <?php  echo $user_stats['stamina']?></li>
-                                <li class="specifications">Стойкость: <?php  echo $user_stats['durability']?></li>
-                                <li class="specifications">Рефлексы: <?php  echo $user_stats['reflexes']?></li>
-                                <li class="specifications">Меткость: <?php  echo $user_stats['accuracy']?></li>
-                                <li class="specifications">Интеллект: <?php  echo $user_stats['intelligence']?></li>
-                                <li class="specifications">Мудрость: <?php  echo $user_stats['wisdom']?></li>
-                                <li class="specifications">Интуиция: <?php  echo $user_stats['intuition']?></li>
-                                <li class="specifications">Память: <?php  echo $user_stats['memory']?></li>
-                                <li class="specifications">Харизма: <?php  echo $user_stats['charisma']?></li>
-                                <li class="specifications">Дух: <?php  echo $user_stats['mind']?></li>
-                                <li class="specifications">Удача: <?php  echo $user_stats['lucky']?></li>
+                                <li class="specifications">Сила: <?php  echo $user_stats["str"]?> 
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=str'>+</a>
+                                </li>
+                                <li class="specifications">Скорость: <?php  echo $user_stats['speed']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=speed'>+</a>
+                                </li>
+                                <li class="specifications">Ловкость: <?php  echo $user_stats['dexterity']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=dexterity'>+</a>
+                                </li>
+                                <li class="specifications">Выносливость: <?php  echo $user_stats['stamina']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=stamina'>+</a>
+                                </li>
+                                <li class="specifications">Стойкость: <?php  echo $user_stats['durability']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=durability'>+</a>
+                                </li>
+                                <li class="specifications">Рефлексы: <?php  echo $user_stats['reflexes']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=reflexes'>+</a>
+                                </li>
+                                <li class="specifications">Меткость: <?php  echo $user_stats['accuracy']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=accuracy'>+</a>
+                                </li>
+                                <li class="specifications">Интеллект: <?php  echo $user_stats['intelligence']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=intelligence'>+</a>
+                                </li>
+                                <li class="specifications">Мудрость: <?php  echo $user_stats['wisdom']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=wisdom'>+</a>
+                                </li>
+                                <li class="specifications">Интуиция: <?php  echo $user_stats['intuition']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=intuition'>+</a>
+                                </li>
+                                <li class="specifications">Память: <?php  echo $user_stats['memory']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=memory'>+</a>
+                                </li>
+                                <li class="specifications">Харизма: <?php  echo $user_stats['charisma']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=charisma'>+</a>
+                                </li>
+                                <li class="specifications">Дух: <?php  echo $user_stats['mind']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=mind'>+</a>
+                                </li>
+                                <li class="specifications">Удача: <?php  echo $user_stats['lucky']?>
+                                    <a href='http://ichiru/engine/main/addpoint.php?point=lucky'>+</a>
+                                </li>
+                                <li class="specifications">Свободные очки характеристик: <?php  echo $user_stats['stats_point']?></li>
                             </ul>
                         </div>
+                        <script type="text/javascript">
+                            
+                        </script>
+                        <?php
+                            //
+                        ?>
                     </div>
                 </div>
             </div>
@@ -110,38 +142,41 @@ $avatar = $_SESSION['avatar'];
 
             <div class="tabs_container">
                 <input class="hide" type="radio" name="tabs" id="tab2"/>
-                <label for="tab2">Скиллы</label>
+                <label for="tab2">Навыки</label>
                 <div class="tab_content" id="tab_content_2">
                     <div class="skill-wrapp">
-
                         <?php
-                        $i = 1;
-                        $skill_title = $q_skill_array["skill_title"];
-                        $skill_desc = $q_skill_array['skill_desc'];
-                        $skill_avatar = $q_skill_array['skill_avatar'];
-                        $skill_lvl = $q_skill_array['skill_lvl'];
-                        $w5 = $q_skill_array['5'];
-                        $w6 = $q_skill_array['6'];
-                        while ( $i <= $skill_rows) {
-                            $i++;
+                        /* */
+                        
+
+                        do{
+                            $skill_bd_main = mysqli_query($bd_connect, "SELECT * FROM skills WHERE  skill_id = '{$skill_bd_check['skill_id']}' ORDER BY `skills`.`skill_id` ASC");
+                            $q_skill_array = mysqli_fetch_array($skill_bd_main);
+                            if (empty($q_skill_array)) {
+                                
+                            }
+                            else{ 
                             echo "
                             <div class='skill-list'>
-                                <div class='skill-name' style='background: url($skill_avatar);background-size: cover;'>
-                                    <span>$skill_title</span>
+                                <div class='skill-name' style='background: url({$q_skill_array['skill_avatar']});background-size: cover;'>
+                                    <span>{$q_skill_array['skill_title']}</span>
                                 </div>
                                     <div class='skill-list-desc'>
                                     <div class='skill-desc'>
-                                        <span>$skill_desc<br>Уровень:$skill_lvl</span>
-    
+                                        <span>{$q_skill_array['skill_desc']}<br>Уровень:{$q_skill_array['skill_lvl']}</span>
+                                        <span>Проверка на
                                     </div>
                                 </div>
                             </div>";
-                            }
-                        
-//var_dump($q_skill_array);
+                        }
+                            //print_r($skill_bd_main);
+                        }
+                        while ($skill_bd_check = mysqli_fetch_array($skill_bd));
+                        echo "Check";
                         ?>
                         </div>
-                    <a href='http://ichiru/engine/user/addskill.php' class='HeaderUserNickname'>Add Skill</a>
+                    <a href='http://ichiru/engine/main/skill.php' class='HeaderUserNickname'>Add Skill</a>
+                    <a href='http://ichiru/engine/user/addskill.php' class='HeaderUserNickname'>Add Skill To Player</a>
                     </div>
                 </div>
             </div>
