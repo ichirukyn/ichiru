@@ -129,12 +129,6 @@ $avatar = $_SESSION['avatar'];
                                 <li class="specifications">Свободные очки характеристик: <?php  echo $user_stats['stats_point']?></li>
                             </ul>
                         </div>
-                        <script type="text/javascript">
-                            
-                        </script>
-                        <?php
-                            //
-                        ?>
                     </div>
                 </div>
             </div>
@@ -163,8 +157,8 @@ $avatar = $_SESSION['avatar'];
                                 </div>
                                     <div class='skill-list-desc'>
                                     <div class='skill-desc'>
-                                        <span>{$q_skill_array['skill_desc']}<br>Уровень:{$q_skill_array['skill_lvl']}</span>
-                                        <span>Проверка на
+                                        <span>{$q_skill_array['skill_desc']}<br>Уровень:{$skill_bd_check['skill_exp']}</span>
+                                        <span>Проверка на <a href='http://ichiru/engine/user/addskill.php?skill_id={$q_skill_array['skill_id']}'>Характеристики</a>
                                     </div>
                                 </div>
                             </div>";
@@ -172,7 +166,6 @@ $avatar = $_SESSION['avatar'];
                             //print_r($skill_bd_main);
                         }
                         while ($skill_bd_check = mysqli_fetch_array($skill_bd));
-                        echo "Check";
                         ?>
                         </div>
                     <a href='http://ichiru/engine/main/skill.php' class='HeaderUserNickname'>Add Skill</a>

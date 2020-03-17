@@ -61,8 +61,7 @@ $exp_total = $q_3_array["exp_total"];
 
 */
 //skill
-
-$skill_bd = mysqli_query($bd_connect, "SELECT * FROM user_skill WHERE user_id = '$id' ORDER BY `skill_id` DESC");
+$skill_bd = mysqli_query($bd_connect, "SELECT * FROM user_skill WHERE user_id = '$id' ORDER BY `skill_id` ASC");
 //$skill_bd_check = mysqli_fetch_array($skill_bd);
 //$skill_rows = mysqli_num_rows($skill_bd);
 //$skill_id_main = $skill_bd_check["skill_id"];
@@ -105,6 +104,21 @@ $quest_row = mysqli_num_rows($user_quest_main_query);
 
 //var_dump($user_quest_main);
 //WHERE `quest_lvl` = '$user_lvl'
+
+
+
+
+
+//die roll
+function roll ($sides) {
+    return mt_rand(1,$sides);
+}
+ 
+//echo roll(6);   // roll a six-sided die
+//echo roll(10);  // roll a ten-sided die
+//$d24 = roll(24);  // roll a twenty-sided die
+
+
 
 
 
