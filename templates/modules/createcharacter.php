@@ -38,6 +38,7 @@
 			    <option value="dvorf">Дворф</option>
 			    <option value="gnom">Гном</option>
 			    <option value="semicircular">Полурослик</option>
+			    <option value="semicircular">Гоблин</option>
 		   </select>
 		</li>
 		<li>
@@ -65,7 +66,7 @@
  		 <li>
 			<label>Жизненная цель</label>
 			<select name="life goal" form="form_addcharacter" size = "1" required>
-			    <option value=""></option>
+			    <option value="Убить всех">Убить всех</option>
 			    <option value=""></option>
 			    <option value=""></option>
 			    <option value=""></option>
@@ -77,6 +78,7 @@
 			    <option value="Работать в кузне">Работать в кузне</option>
 			    <option value="Читать книги">Читать книги</option>
 			    <option value="Торговать">Торговать</option>
+			    <option value="Нападать на путников">Нападать на путников</option>
 		   </select>
 		</li>
   		<li>
@@ -86,12 +88,13 @@
 			    <option value="Обычный воин">Обычный воин</option>
 			    <option value="Рейнджер">Рейнджер</option>
 			    <option value="Маг">Маг</option>
+			    <option value="Обычное">Обычное</option>
 		   </select>
 		</li>
   		<li>
 			<label>Магия, активные способности, пассивные способности, расовые способности</label>
-			<select multiple size="6" name="skill" form="form_addcharacter" required>
-			    <option value="Боевые искусства">Боевые искусства</option>
+			<select size="6" name="skill" form="form_addcharacter" required>
+			    <option value="5">Одноручное дробящее оружие</option>
 			    <option value="Парирование">Парирование</option>
 			    <option value="Магическое мастерство">Магическое мастерство</option>
 			    <option value="Скрытность">Скрытность</option>
@@ -121,7 +124,7 @@
 			    <option value="Ученик академии">Ученик академии</option>
 			    <option value="Сын кузнеца">Сын кузнеца</option>
 			    <option value="Бежавший дворянин">Бежавший дворянин</option>
-			    <option value=""></option>
+			    <option value="Родился жил умер..">Родился жил умер..</option>
 		   </select>
 		</li>
 		<li class="exit_add">

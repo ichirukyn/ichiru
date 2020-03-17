@@ -47,6 +47,7 @@ $user_prehistory = $_POST["prehistory"];
 $_SESSION['user_class'] = $_POST["class"];;
 $_SESSION['user_name'] = $_POST['name'];
 
+$skill_id_gob = $_POST['skill'];
 
 if(!empty($_POST)) {
 
@@ -107,8 +108,9 @@ $query_update_stats = mysqli_query($bd_connect,"UPDATE `stats` SET `str`= $str,`
 $query_update_user = mysqli_query($bd_connect,"UPDATE `user` SET `name`= '$name',`age`='$age',`user_race`='$race2',`user_genre`='$user_genre', `character`='$user_character',`worldview`='$user_worldview',`life_goal`='$user_life_goal',`hobby`='$user_hobby',`language`='$user_language',`relations`='$user_relations',`prehistory`='$user_prehistory' WHERE user_id = '$id'");
 //var_dump($_POST);
 
+//$q_skill_check = mysqli_query($bd_connect,"INSERT INTO `user_skill` (`user_id`, `skill_id`, `skill_exp`, `skill_lvl`) VALUES ($id,skill_id_gob,0,1) WHERE `skill_id` = 'skill_id_gob'");
 
-for ($i=1; $i < 31; $i++) { 
+/*for ($i=1; $i < 31; $i++) { 
     $q_skill_check = mysqli_query($bd_connect,"SELECT * FROM `user_skill` WHERE `skill_id` = '$i'");
     $q_skill_check_1 = mysqli_fetch_assoc($q_skill_check);
     $skill_id_user = $q_skill_check_1['user_id'];
@@ -119,8 +121,8 @@ for ($i=1; $i < 31; $i++) {
     else{
         $q_skill_all = mysqli_query($bd_connect,"INSERT INTO `user_skill`(`user_id`, `skill_id`, `skill_exp`) VALUES ($id,$i,0)");
     }
-}
-    var_dump($i);
+}*/
+    var_dump($q_skill_check);
 
 ?>
 <!--

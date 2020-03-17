@@ -43,7 +43,7 @@ $avatar = $_SESSION['avatar'];
 
                 </div>
                 <div class="map-wrapp">
-                    <div class="map"><img src="{theme}/images/img/map.jpg"></div>
+                    <div class="map"><img src="uploads/logo/map.jpg"></div>
                 </div>
             </div>
 
@@ -146,7 +146,7 @@ $avatar = $_SESSION['avatar'];
                         do{
                             $skill_bd_main = mysqli_query($bd_connect, "SELECT * FROM skills WHERE  skill_id = '{$skill_bd_check['skill_id']}' ORDER BY `skills`.`skill_id` ASC");
                             $q_skill_array = mysqli_fetch_array($skill_bd_main);
-                            if (empty($q_skill_array)) {
+                            if (!isset($q_skill_array)) {
                                 
                             }
                             else{ 
@@ -157,8 +157,8 @@ $avatar = $_SESSION['avatar'];
                                 </div>
                                     <div class='skill-list-desc'>
                                     <div class='skill-desc'>
-                                        <span>{$q_skill_array['skill_desc']}<br>Уровень:{$skill_bd_check['skill_exp']}</span>
-                                        <span>Проверка на <a href='http://ichiru/engine/user/addskill.php?skill_id={$q_skill_array['skill_id']}'>Характеристики</a>
+                                        <span>{$q_skill_array['skill_desc']}<br>Уровень:{$skill_bd_check['skill_lvl']}</span>
+                                        <span>Проверка на <a href='http://ichiru/engine/user/check_skill.php?skill_id={$q_skill_array['skill_id']}'>Характеристики</a>
                                     </div>
                                 </div>
                             </div>";
@@ -491,15 +491,20 @@ $avatar = $_SESSION['avatar'];
                     <div class="tab_content" id="tab_content_7">
                           <div class="quest_wrap">
                             <?php
-                            $i = 1;
-                            $quest_id = $user_quest_main["quest_id"];
-                            $quest_title = $user_quest_main["quest_title"];
-                            $quest_desc = $user_quest_main["quest_desc"];
-                            $quest_lvl = $user_quest_main["quest_lvl"];
-                            $quest_progress = $user_quest_main["quest_progress"];
-                            $quest_rang = $user_quest_main["quest_rang"];
-                            while ($i <= $quest_row) {
-                                $i++;
+                            do {
+
+                                 if (!isset($user_quest_main)) {
+                                
+                                }
+                                else{
+
+                                $quest_id = $user_quest_main["quest_id"];
+                                $quest_title = $user_quest_main["quest_title"];
+                                $quest_desc = $user_quest_main["quest_desc"];
+                                $quest_lvl = $user_quest_main["quest_lvl"];
+                                $quest_progress = $user_quest_main["quest_progress"];
+                                $quest_rang = $user_quest_main["quest_rang"];
+
                                 echo "
                                 <ul class='quest_1'>
                                   <span>$quest_title</span>
@@ -507,8 +512,12 @@ $avatar = $_SESSION['avatar'];
                                       Ранг:$quest_rang<br>Минимальный уровень:$quest_lvl<br>Описание:$quest_desc<br>Прогресс:$quest_progress
                                       <a href='http://ichiru/engine/main/addquest.php'>Приступить к выполнению</a>
                                     </li>
-                                </ul>";
-                              }
+                                </ul>
+                                <li></li>
+                                ";
+                                }
+                            }
+                            while ($user_quest_main = mysqli_fetch_array($user_quest_main_query));
 
                               ?>
                               <ul>
@@ -526,6 +535,10 @@ $avatar = $_SESSION['avatar'];
                     <input class="hide" type="radio" name="tabs" id="tab8"/>
                     <label for="tab8">Карта</label>
                     <div class="tab_content" id="tab_content_8">
+                        <div class="map-wrapp1">
+                            
+                            <a href="http://ichiru/templates/location/first_location.php">First Location</a>
+                        </div>
                           
                     </div>
                 </div>

@@ -62,12 +62,7 @@ $exp_total = $q_3_array["exp_total"];
 */
 //skill
 $skill_bd = mysqli_query($bd_connect, "SELECT * FROM user_skill WHERE user_id = '$id' ORDER BY `skill_id` ASC");
-//$skill_bd_check = mysqli_fetch_array($skill_bd);
-//$skill_rows = mysqli_num_rows($skill_bd);
-//$skill_id_main = $skill_bd_check["skill_id"];
 
-//$skill_row = mysqli_fetch_row($skill_bd_main);
-//print_r($skiil_bd_main["num_rows"]);
 
 //var_dump($skill_bd_check);
 
@@ -98,8 +93,8 @@ echo roll(6);
 
 //Quest
 
-$user_quest_main_query = mysqli_query($bd_connect, "SELECT * FROM `quest`");
-$user_quest_main = mysqli_fetch_array($user_quest_main_query);
+$user_quest_main_query = mysqli_query($bd_connect, "SELECT * FROM `quest` ORDER BY `quest_id` ASC");
+//$user_quest_main = mysqli_fetch_array($user_quest_main_query);
 $quest_row = mysqli_num_rows($user_quest_main_query);
 
 //var_dump($user_quest_main);
