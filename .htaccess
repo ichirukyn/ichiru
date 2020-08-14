@@ -1,4 +1,8 @@
-AddDefaultCharset UTF-8
-RewriteEngine On
-RewriteRule ^book/([A-z0-9]+) ?BookId=$1 [L]
-RewriteRule ^user/([A-z0-9]+) ?UserId=$1 [L]
+# API W&S
+# Настройка запроса: перенаправление всех запросов на 
+# index.php
+# 24:04:2020 | ©ASu
+AddDefaultCharset utf-8
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ ./index.php [L,QSA]

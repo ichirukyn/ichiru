@@ -118,6 +118,7 @@ flex-direction: row;
     width: 80px;
     height: 80px;
     margin: 5px;
+    object-fit: cover;
 }
 .hp-mp-st-bar{
 background:#666;
@@ -201,7 +202,6 @@ flex-direction: column;
     justify-content: center;
 }
 .stats-wrapp{
-	background: #343436;
 	display: flex;
     flex-direction: row;
     align-items: center;
@@ -276,7 +276,6 @@ ul.stats_ul{
     background: #666;
     margin: 10px 0px 10px 10px;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     padding-left: 5px;
 }

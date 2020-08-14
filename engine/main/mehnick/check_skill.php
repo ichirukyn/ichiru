@@ -2,12 +2,15 @@
 session_start();
 include "D:/os/OSPanel/domains/ichiru/bd_connect.php";
 
-$skill_id_check = $_GET['skill_id'];
+$skill_id_check = $_SESSION['get']["skill_id"];
 $id = $_SESSION['userid'];
+
+
 
 $query = mysqli_query($bd_connect,"SELECT * FROM `skills` WHERE `skill_id` = $skill_id_check");
 $q = mysqli_fetch_assoc($query);
 $i = 1;
+
 
 $query_user_skill = mysqli_query($bd_connect,"SELECT * FROM `user_skill` WHERE `skill_id` = $skill_id_check");
 $query_user_skill_lvl = mysqli_fetch_assoc($query_user_skill);
@@ -23,28 +26,23 @@ unset($q['skill_lvl']);
 $stats_point_exp = intval($query_user_skill_lvl['skill_exp']);
 
 
-do {
-	$l = array_search(1,$q);
-	unset($q[$l]);
-	$i++;
-} while ($i < 5);
 
 
-$stats_new = array_diff_key($stats_array,$q);
 
 
-$lucky = array_pop($stats_new);
-
-$stats_1 = array_shift($stats_new);
-
+$lucky = $_SESSION['get']["lucky"];
+$stats_1 = $_SESSION['get']["stats_1"];
+$stats_2 = $_SESSION['get']["stats_2"];
+$stats_2_1 = $_SESSION['get']["stats_2_1"];
+/*
 if (isset($stats_2)) {
-	$stats_2 = array_shift($stats_new);
+	$stats_2 = $_SESSION['get']["stats_2"];
 }
 
-if (isset($stats_new)) {
-	$stats_2_1 = array_shift($stats_new);
+if (isset($stats_2_1)) {
+	$stats_2_1 = $_SESSION['get']["stats_2_1"];
 }
-
+*/
 //Формулы!!
 
 
@@ -52,7 +50,6 @@ function roll ($sides) {
     return mt_rand(1,$sides);
 }
 $d24 = roll(24);
-extract($stats_new);
 
 $stats_point_1 = $stats_point_lvl/10;
 
@@ -73,6 +70,7 @@ $result = 24 - $stats_6;
 $res = round($result, 0);
 
 var_dump($d24);
+
 
 $skill_crit = array(1,2,3,4,5,6,7);
 
@@ -137,6 +135,8 @@ elseif(100 >= $stats_point){
 }
 
 
+
+
 if ($res <= $d24) {
 	/*echo "<br>Удача<br>";
 	echo "$res <= $d24";*/
@@ -180,12 +180,12 @@ else{
 
 	
 
-
+unset($_SESSION["get"])
 
 
 
 ?>
-<!--
+
     <script type="text/javascript">
         window.location = "http://ichiru"
     </script> -->

@@ -1,15 +1,255 @@
 <?php
 session_start();
-include "D:/os/OSPanel/domains/ichiru/engine/user/constant.php";
-//"INNER JOIN 'table1' ..."
-$avatar = $_SESSION['avatar'];
+//Module
+include 'engine/main/modules/modules.php';
+$id = $_SESSION['userid'];
+//var_dump(stats($id,$bd_connect));
+
+
+$user_stats = user_stats($id,$bd_connect);
+$user_data = user_data($id,$bd_connect);
+$avatar = avatar_check($user_data);
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 </head>
 <body>
-<link href="http://ichiru/templates/css/styles.css" type="text/css" rel="stylesheet">
+<link href="http://ichiru/templates/css/styles1.css" type="text/css" rel="stylesheet">
+
+
+<div class="room room-wrap">
+   <div class="room-menu">
+      <div class="menu__room-info">
+         <div class="menu__room-stats">
+            <p>Страна: Королевство Квернерис</p>
+            <p>Игроков: 2/8</p>
+            <p>Гейммастер: Ichiru</p>
+            <button>Выйти</button>
+         </div>
+      </div>
+      <div class="menu__user-navigation">
+         <li>Карта</li>
+         <li>Статус</li>
+         <li>Скиллы</li>
+         <li>Инвентарь</li>
+      </div>
+   </div>
+   <div class="room-block">
+        <div class="block__stats-wrap">
+
+            <div class="stats__player-date">
+                <div class="player-stats">
+                    <ul class="stats">
+                        <li class="stats-link"><span>Имя:</span> <?php  echo $user_data['name']?></li> 
+                        <li class="stats-link"><span>Раса:</span> <?php  echo $user_data['user_race']?></li>
+                        <li class="stats-link"><span>Класс:</span> <?php  echo $user_data['user_class']?></li>
+                    </ul>
+                </div>
+                <div class="player-lvl">
+                    <li class="stats-link">Уровень: <?php  echo $user_data["lvl"] //"$lv1 ($exp/$exp_total)"?></li>
+                </div>
+            </div>
+            <div class="stats-first">
+                <div>
+                    <ul class="stats">
+                        <li class=""><span>HP:</span> <?php  echo $user_stats["hp"]?></li>
+                        <li class=""><span>MP:</span> <?php  echo $user_stats["mp"]?></li>
+                        <li class=""><span>ST:</span> <?php  echo $user_stats["st"]?></li>
+                        <li class=""><span>KP:</span> <?php  echo $user_stats["st"]?></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="stats">
+                        <li class=""><span>Физ. защита:</span> <?php  echo $user_stats["hp"]?></li>
+                        <li class=""><span>Маг. защита:</span> <?php  echo $user_stats["mp"]?></li>
+                        <li class=""><span>Золото:</span> <?php  echo $user_stats["st"]?></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="stats-list">
+                <h4>Характеристики</h4>
+                <ul class="stats">
+                    <li class="specifications">Сила: <?php  echo $user_stats["str"]?> 
+                        <a href='http://ichiru/engine/main/addpoint.php?point=str'>+</a>
+                    </li>
+                    <li class="specifications">Скорость: <?php  echo $user_stats['speed']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=speed'>+</a>
+                    </li>
+                    <li class="specifications">Ловкость: <?php  echo $user_stats['dexterity']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=dexterity'>+</a>
+                    </li>
+                    <li class="specifications">Выносливость: <?php  echo $user_stats['stamina']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=stamina'>+</a>
+                    </li>
+                    <li class="specifications">Стойкость: <?php  echo $user_stats['durability']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=durability'>+</a>
+                    </li>
+                    <li class="specifications">Рефлексы: <?php  echo $user_stats['reflexes']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=reflexes'>+</a>
+                    </li>
+                    <li class="specifications">Меткость: <?php  echo $user_stats['accuracy']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=accuracy'>+</a>
+                    </li>
+                    <li class="specifications">Интеллект: <?php  echo $user_stats['intelligence']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=intelligence'>+</a>
+                    </li>
+                    <li class="specifications">Мудрость: <?php  echo $user_stats['wisdom']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=wisdom'>+</a>
+                    </li>
+                    <li class="specifications">Интуиция: <?php  echo $user_stats['intuition']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=intuition'>+</a>
+                    </li>
+                    <li class="specifications">Память: <?php  echo $user_stats['memory']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=memory'>+</a>
+                    </li>
+                    <li class="specifications">Харизма: <?php  echo $user_stats['charisma']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=charisma'>+</a>
+                    </li>
+                    <li class="specifications">Дух: <?php  echo $user_stats['mind']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=mind'>+</a>
+                    </li>
+                    <li class="specifications">Удача: <?php  echo $user_stats['lucky']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=lucky'>+</a>
+                    </li>
+                    <li class="specifications">Свободные очки характеристик: <?php  echo $user_stats['stats_point']?></li>
+                </ul>                
+            </div>
+
+        </div>
+   </div>
+   <div class="room-chat">
+      <div class="chat-window">
+         <li>Общий</li>
+         <li>Флуд</li>
+      </div>
+      <div class="chat-block">
+         <div class="chat__user-short">
+            <div class="user-avatar">
+               <img src="../../upload/img/IYrEEF.jpg">
+               <div>
+                  <span>ichiru</span><br>
+                  <span>Гейммастер</span>
+               </div>
+            </div>
+            <div class="user-text">
+               <span>Проверка чата, нам нужно длинное сообщение, чтобы выявить все ошибки в верстке.</span>
+            </div>
+            <div class="line"></div>
+         </div>
+      </div>
+      <div class="chat-input">
+         <form>
+            <textarea></textarea>
+            <button>Отправить</button>
+         </form>
+      </div>
+   </div>
+</div>
+
+
+
+
+
+
+<!--
+
+
+
+
+
+<div class="stats-wrapp">
+            <div class="stats-wrapp-list">
+                <div class="stats-list">
+                    <span>Статус:</span>
+                    <ul class="stats_ul">
+                        <li class="stats-link">Имя: <?php  echo $user_data['name']?></li> 
+                        <li class="stats-link">Возраст: <?php  echo $user_data['age']?></li>
+                        <li class="stats-link">Пол: <?php  echo $user_data['user_genre']?></li>
+                        <li class="stats-link">Уровень: <?php  echo $user_data["lvl"] //"$lv1 ($exp/$exp_total)"?></li>
+                        <li class="stats-link">Раса: <?php  echo $user_data['user_race']?></li>
+                        <li class="stats-link">Характер: <?php  echo $user_data['character']?></li>
+                        <li class="stats-link">Мировозрение: <?php  echo $user_data['worldview']?></li>
+                        !--<li class="stats-link">Жизненная цель: <?php  echo $user_data['life_goal']?><li>--
+                        <li class="stats-link">Хобби: <?php  echo $user_data['hobby']?></li>
+                        !--<li class="stats-link">Языки: <?php  echo $user_data['language']?></li>--
+                        <li class="stats-link">Отношения с другими расами: <?php  echo $user_data['relations']?></li>
+                        <li class="stats-link">Предыстория: <?php  echo $user_data['prehistory']?></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="general-stats">
+                <span>Характеристики:</span>
+                <ul class="stats_ul">
+                    <li class="specifications">Сила: <?php  echo $user_stats["str"]?> 
+                        <a href='http://ichiru/engine/main/addpoint.php?point=str'>+</a>
+                    </li>
+                    <li class="specifications">Скорость: <?php  echo $user_stats['speed']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=speed'>+</a>
+                    </li>
+                    <li class="specifications">Ловкость: <?php  echo $user_stats['dexterity']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=dexterity'>+</a>
+                    </li>
+                    <li class="specifications">Выносливость: <?php  echo $user_stats['stamina']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=stamina'>+</a>
+                    </li>
+                    <li class="specifications">Стойкость: <?php  echo $user_stats['durability']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=durability'>+</a>
+                    </li>
+                    <li class="specifications">Рефлексы: <?php  echo $user_stats['reflexes']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=reflexes'>+</a>
+                    </li>
+                    <li class="specifications">Меткость: <?php  echo $user_stats['accuracy']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=accuracy'>+</a>
+                    </li>
+                    <li class="specifications">Интеллект: <?php  echo $user_stats['intelligence']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=intelligence'>+</a>
+                    </li>
+                    <li class="specifications">Мудрость: <?php  echo $user_stats['wisdom']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=wisdom'>+</a>
+                    </li>
+                    <li class="specifications">Интуиция: <?php  echo $user_stats['intuition']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=intuition'>+</a>
+                    </li>
+                    <li class="specifications">Память: <?php  echo $user_stats['memory']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=memory'>+</a>
+                    </li>
+                    <li class="specifications">Харизма: <?php  echo $user_stats['charisma']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=charisma'>+</a>
+                    </li>
+                    <li class="specifications">Дух: <?php  echo $user_stats['mind']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=mind'>+</a>
+                    </li>
+                    <li class="specifications">Удача: <?php  echo $user_stats['lucky']?>
+                        <a href='http://ichiru/engine/main/addpoint.php?point=lucky'>+</a>
+                    </li>
+                    <li class="specifications">Свободные очки характеристик: <?php  echo $user_stats['stats_point']?></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <header class="header">
 
@@ -20,20 +260,8 @@ $avatar = $_SESSION['avatar'];
             <div class="head-menu">
                 <div class="avatar-wrapp">
                     <div class="avatar"> 
-                        <?php 
-                        if (empty($avatar)) {
-                            ?>
-                            <img src="<?php  echo $avatar; ?>"/>
-                        <?php
-                        }
-                        else{
-                            ?>
-                            <img src='<?php echo $avatar?>' />
-                            <?php
-                        }
-
-                        ?>
-                        <div class="nick-name"><h2><?php  echo $user_stats_main['name']?></h2></div>
+                        <img src="<?php  echo $avatar;?>"/>
+                        <div class="nick-name"><h2><?php  echo $user_data['name']?></h2></div>
                     </div>
                     <div class="hp-mp-st-bar">
                         <div class="hp-bar">hp <?php  echo $user_stats["hp"]?></div>
@@ -57,83 +285,9 @@ $avatar = $_SESSION['avatar'];
             
             <!-- Stats -->
 
-            <div class="tabs_container">
-                <input class="hide" type="radio" name="tabs" id="tab1"/>
-                <label for="tab1">Статус</label>
-                <div class="tab_content" id="tab_content_1">
-                    <div class="stats-wrapp">
-                        <div class="stats-wrapp-list">
-                            <div class="stats-list">
-                                <span>Статус:</span>
-                                <ul class="stats_ul">
-                                    <li class="stats-link">Имя: <?php  echo $user_stats_main['name']?></li> 
-                                    <li class="stats-link">Возраст: <?php  echo $user_stats_main['age']?></li>
-                                    <li class="stats-link">Пол: <?php  echo $user_stats_main['user_genre']?></li>
-                                    <li class="stats-link">Уровень: <?php  echo $user_stats_main["lvl"] //"$lv1 ($exp/$exp_total)"?></li>
-                                    <li class="stats-link">Раса: <?php  echo $user_stats_main['user_race']?></li>
-                                    <li class="stats-link">Характер: <?php  echo $user_stats_main['character']?></li>
-                                    <li class="stats-link">Мировозрение: <?php  echo $user_stats_main['worldview']?></li>
-                                    <!--<li class="stats-link">Жизненная цель: <?php  echo $user_stats_main['life_goal']?><li>-->
-                                    <li class="stats-link">Хобби: <?php  echo $user_stats_main['hobby']?></li>
-                                    <!--<li class="stats-link">Языки: <?php  echo $user_stats_main['language']?></li>-->
-                                    <li class="stats-link">Отношения с другими расами: <?php  echo $user_stats_main['relations']?></li>
-                                    <li class="stats-link">Предыстория: <?php  echo $user_stats_main['prehistory']?></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="general-stats">
-                            <span>Характеристики:</span>
-                            <ul class="stats_ul">
-                                <li class="specifications">Сила: <?php  echo $user_stats["str"]?> 
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=str'>+</a>
-                                </li>
-                                <li class="specifications">Скорость: <?php  echo $user_stats['speed']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=speed'>+</a>
-                                </li>
-                                <li class="specifications">Ловкость: <?php  echo $user_stats['dexterity']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=dexterity'>+</a>
-                                </li>
-                                <li class="specifications">Выносливость: <?php  echo $user_stats['stamina']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=stamina'>+</a>
-                                </li>
-                                <li class="specifications">Стойкость: <?php  echo $user_stats['durability']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=durability'>+</a>
-                                </li>
-                                <li class="specifications">Рефлексы: <?php  echo $user_stats['reflexes']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=reflexes'>+</a>
-                                </li>
-                                <li class="specifications">Меткость: <?php  echo $user_stats['accuracy']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=accuracy'>+</a>
-                                </li>
-                                <li class="specifications">Интеллект: <?php  echo $user_stats['intelligence']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=intelligence'>+</a>
-                                </li>
-                                <li class="specifications">Мудрость: <?php  echo $user_stats['wisdom']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=wisdom'>+</a>
-                                </li>
-                                <li class="specifications">Интуиция: <?php  echo $user_stats['intuition']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=intuition'>+</a>
-                                </li>
-                                <li class="specifications">Память: <?php  echo $user_stats['memory']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=memory'>+</a>
-                                </li>
-                                <li class="specifications">Харизма: <?php  echo $user_stats['charisma']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=charisma'>+</a>
-                                </li>
-                                <li class="specifications">Дух: <?php  echo $user_stats['mind']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=mind'>+</a>
-                                </li>
-                                <li class="specifications">Удача: <?php  echo $user_stats['lucky']?>
-                                    <a href='http://ichiru/engine/main/addpoint.php?point=lucky'>+</a>
-                                </li>
-                                <li class="specifications">Свободные очки характеристик: <?php  echo $user_stats['stats_point']?></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <!-- skills-->
-
+<!--
             <div class="tabs_container">
                 <input class="hide" type="radio" name="tabs" id="tab2"/>
                 <label for="tab2">Навыки</label>
@@ -141,7 +295,7 @@ $avatar = $_SESSION['avatar'];
                     <div class="skill-wrapp">
                         <?php
                         /* */
-                        
+                        /*
 
                         do{
                             $skill_bd_main = mysqli_query($bd_connect, "SELECT * FROM skills WHERE  skill_id = '{$skill_bd_check['skill_id']}' ORDER BY `skills`.`skill_id` ASC");
@@ -158,7 +312,7 @@ $avatar = $_SESSION['avatar'];
                                     <div class='skill-list-desc'>
                                     <div class='skill-desc'>
                                         <span>{$q_skill_array['skill_desc']}<br>Уровень:{$skill_bd_check['skill_lvl']}</span>
-                                        <span>Проверка на <a href='http://ichiru/engine/user/check_skill.php?skill_id={$q_skill_array['skill_id']}'>Характеристики</a>
+                                        <span>Проверка на <a href='http://ichiru/engine/user/check_stat.php?skill_id={$q_skill_array['skill_id']}'>Характеристики</a>
                                     </div>
                                 </div>
                             </div>";
@@ -173,6 +327,45 @@ $avatar = $_SESSION['avatar'];
                     </div>
                 </div>
             </div>
+            <!-- Spells-->
+
+            <div class="tabs_container">
+                <input class="hide" type="radio" name="tabs" id="tab122"/>
+                <label for="tab122">Заклинания</label>
+                <div class="tab_content" id="tab_content_122">
+                    <div class="skill-wrapp">
+                        <?php         
+                        do{
+                            $spell_bd_main = mysqli_query($bd_connect, "SELECT * FROM `spells_stats` WHERE  spells_id = '{$spell_bd_check['spell_id']}' ORDER BY `spells_id` ASC");
+                            $q_spell_array = mysqli_fetch_assoc($spell_bd_main);
+                            //var_dump($q_spell_array);
+                            if (!isset($q_spell_array)) {
+                                
+                            }
+                            else{ 
+                            echo "
+                            <div class='skill-list'>
+                                <div class='skill-name' style='background: url({$q_spell_array['spells_avatar']});background-size: cover;'>
+                                    <span>{$q_spell_array['spells_title']}</span>
+                                </div>
+                                    <div class='skill-list-desc'>
+                                    <div class='skill-desc'>
+                                        <span>{$q_spell_array['spells_desc']}<br>Цена:{$q_spell_array['spells_mp']}</span>
+                                        <span>Проверка на <a href='http://ichiru/engine/main/spells/spells_config.php?spell_lvl={$q_spell_array['spells_lvl']}'>Характеристики</a>
+                                    </div>
+                                </div>
+                            </div>";
+                        }
+                            //print_r($skill_bd_main);
+                        }
+                        while ($spell_bd_check = mysqli_fetch_array($spell_bd));
+                        ?>
+                        </div>
+                    <a href='http://ichiru/engine/main/spells/add_spells.php' class='HeaderUserNickname'>Add Spell</a>
+                    <a href='http://ichiru/engine/main/spells/add_spells_config.php' class='HeaderUserNickname'>Add Skill To Player</a>
+                    </div>
+                </div>
+            
 
         <!-- Inventory -->
         
@@ -569,6 +762,8 @@ $avatar = $_SESSION['avatar'];
 </div>
 
 
+*/?>
+-->
 <script src="js/lib.js"></script>
 <script>
     jQuery(function($){
@@ -587,3 +782,258 @@ $avatar = $_SESSION['avatar'];
     </dir>
 </footer>
 </html>
+
+
+<style type="text/css">
+    /*Stats*/
+    span{
+        padding: 2px;
+        font-weight: bold;
+    }
+    .stats > li{
+        padding: 5px;
+    }
+    .stats__player-date{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .stats-first{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /**/
+   *{
+      font-size: 15px;
+      margin: 0;
+      padding: 0;
+      outline: none;
+      border: none;
+      list-style: none;
+      text-decoration: none;
+      color: #fff;
+      box-sizing: border-box;
+      font-family: Roboto,sans-serif;
+      transition: .2s ease;
+   }
+   body{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      background: #100f15;
+   }
+   button{
+      background: #23232f;
+      padding: 5px;
+      margin: 3px 0;
+   }
+   textarea{
+   height: 14%;
+    width: 99%;
+    margin: 2px;
+    background: #16161e;
+   }
+   /*Room*/
+   .room{
+      width: 100%;
+      height: 99%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 5px;
+   }
+   .room-menu{
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      margin: 5px;
+      background: #23232f;
+   }
+   .menu__room-stats{
+      display: flex;
+      flex-direction: column;
+      /* align-items: flex-start; */
+      justify-content: center;
+      padding: 5;
+   }
+   .menu__room-info{
+      width: 100%;
+      background: #16161e;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      margin: 5px;
+   }
+   
+   .room-block{
+      width: 50%;
+      background: #23232f;
+      height: 100%;
+      margin: 5px;
+      padding: 5px;
+   }
+   .room-chat{
+      width: 25%;
+      background: #23232f;
+      height: 80%;
+      margin: 5px;
+      padding: 5px;
+   }
+   .chat-window{
+      background: #16161e;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+   }
+   .chat-window > li{
+    background: #23232f;
+    padding: 0 10px;
+    margin: 3px;
+   }
+   .chat-block{
+    background: #16161e;
+    width: 100%;
+    height: 75%;
+    margin: 5 0;
+    padding: 5px;
+   }
+   .line{
+      background: #fff;
+   }
+
+
+   .user-avatar{
+    width: 50px;
+    height: 50px;
+    /* margin: 0 5px; */
+    display: flex;
+    align-items: center;
+   }
+   .user-avatar > img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      padding: 5px;
+   }
+
+   /*MainMenu*/
+
+   .menu{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 5px;
+   }
+   .menu-room-room{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+   }
+   .menu-room-user{
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+   }  
+   .menu__user-info{
+      width: 100%;
+      background: #16161e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      margin: 5px;
+   }
+   .menu__user-navigation{
+      width: 100%;
+      background: #16161e;
+      padding: 5px;
+      margin: 5px;
+   }
+   .menu__user-navigation > li{
+      background: #23232f;
+      padding: 5px;
+      margin: 5px;
+   }
+   .menu__user-profile{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+   }
+   .menu__user-update{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+   .menu__user-avatar{
+      width: 100px;
+      height: 100px;
+      margin: 0 10px;
+   }
+   .menu__user-avatar > img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      padding: 5px;
+   }
+   .menu__room-title{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 5px;
+      padding: 5px;
+      background: #16161e;
+   }
+   .menu__room-list{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 5px;
+      padding: 5px;
+      background: #16161e;
+   }
+   .menu_room-short{
+      width: 100%;
+      background: #23232f;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 5px;
+   }
+   .menu_room-short > li{
+      margin-right: 10%;
+      padding: 10px;
+
+   }
+</style>

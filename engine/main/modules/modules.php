@@ -1,24 +1,49 @@
 <?php
 session_start();
-//include "D:/os/OSPanel/domains/ichiru/engine/constants.php";
-//INC_BD();
-include "D:/os/OSPanel/domains/ichiru/bd_connect.php";
-include "D:/os/OSPanel/domains/ichiru/engine/user/exp_config.php";
-include "D:/os/OSPanel/domains/ichiru/engine/user/stats_config.php";
 
 
 
-//stats
-$id = $_SESSION['userid'];
-$user_stats_query = mysqli_query($bd_connect, "SELECT * FROM `stats` WHERE `user_id` = '$id'");
-$user_stats = mysqli_fetch_array($user_stats_query);
-$user_stats_main_query = mysqli_query($bd_connect, "SELECT * FROM `user` WHERE `user_id` = '$id'");
-$user_stats_main = mysqli_fetch_array($user_stats_main_query);
+//Page Stats
 
-//var_dump($_SESSION["avatar"]);
-if (!empty($user_stats['scorestats'])) {
+function user_stats($id,$bd_connect){
 	
+	$user_stats_query = mysqli_query($bd_connect, "SELECT * FROM `stats` WHERE `user_id` = '$id'");
+	$user_stats = mysqli_fetch_assoc($user_stats_query);
+	
+	return($user_stats);
 }
+
+function user_data($id,$bd_connect){
+	
+	$user_data_query = mysqli_query($bd_connect, "SELECT * FROM `user` WHERE `user_id` = '$id'");
+	$user_data = mysqli_fetch_assoc($user_data_query);	
+	
+	return($user_data);
+}
+
+//Page 
+
+
+
+
+
+
+
+
+function avatar_check($user_data){
+	
+	if (empty($_SESSION["avatar"])) {
+		$avatar_bd = $user_data['user_avatar'];
+		$_SESSION["avatar"] = $avatar_bd;
+		$avatar = $_SESSION['avatar'];
+	}
+	else{
+		$avatar = 'uploads/avatars/356-3566579_nico-nii-anonymous-nico-kiznaiver.png';
+	}
+	
+	return $avatar;	
+}
+
 
 
 //
@@ -132,5 +157,38 @@ $friend_check_row1 = mysqli_num_rows($friend_bd_check1);
 $friend_bd_check2 = mysqli_query($bd_connect, "SELECT * FROM `user` WHERE `user_id` IN (SELECT IF (`user_invited` = '$id', `user_inviter`, `user_invited`) FROM `users_status` WHERE `stat_val_id` = '1') ORDER BY `user_id` DESC");
 $friend_check2 = mysqli_fetch_assoc($friend_bd_check2);
 $friend_check_row2 = mysqli_num_rows($friend_bd_check2);
+
+
+
+//Spells
+$spell_bd = mysqli_query($bd_connect, "SELECT * FROM user_spells WHERE user_id = '$id' ORDER BY `spell_id` ASC");
+
 //var_dump($friend_check);
+/*$i_1 = 15;
+$i_2 = 16;
+$i_3 = 17;
+$i_4 = 18;
+$i_5 = 19;
+$i_6 = 20;
+$i_7 = 21;
+$i_8 = 22;
+$i_9 = 23;
+$i_10 = 24;
+
+for ($i = 10; $i <= 100; $i = $i + 10) { 
+	$q_1 = mysqli_query($bd_connect,"INSERT INTO `spells` (`skill_lvl`,`beginner`, `student`, `adept`, `specialist`, `professional`, `master`, `great`, `epic`, `legendary`, `divine`) VALUES ('$i','$i_1','$i_2','$i_3','$i_4','$i_5','$i_6','$i_7','$i_8','$i_9','$i_10')");
+	$i_1--;
+	$i_2--;
+	$i_3--;
+	$i_4--;
+	$i_5--;
+	$i_6--;
+	$i_7--;
+	$i_8--;
+	$i_9--;
+	$i_10--;
+}
+*/
+
+
 ?>
