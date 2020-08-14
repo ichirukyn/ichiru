@@ -1,13 +1,10 @@
 <?php
 session_start();
-include "D:/os/OSPanel/domains/ichiru/bd_connect.php";
-include "D:/os/OSPanel/domains/ichiru/engine/main/race_list.php";
+include "D:/os/OSPanel/domains/ichiru/bd.php";
+include "D:/os/OSPanel/domains/ichiru/engine/main/mehnick/race_list.php";
 
 $id = $_SESSION['userid'];
-$id = $_SESSION['userid'];
-//$query_select_stats = mysqli_query($bd_connect,"SELECT * FROM `stats` WHERE user_id = $id");
-//$query_select_user = mysqli_query($bd_connect,"SELECT * FROM `user` WHERE user_id = $id");
-//$select_user = mysqli_fetch_array($query_select_user);
+
 
 $race1 = $_POST["race"];
 $race["$race1"];
@@ -67,7 +64,7 @@ if(!empty($_POST)) {
     if (!empty($Arr)) {
 
         $UploadDir = '../../../ichiru/uploads/avatars/';
-        $AvatarName = $UploadDir._.basename($_FILES['avatar']['name']);
+        $AvatarName = $UploadDir.$id.'_'.basename($_FILES['avatar']['name']);
         $Mov = move_uploaded_file($_FILES['avatar']['tmp_name'], $AvatarName);
         $AvatarName = stripslashes(strip_tags(trim($AvatarName)));
 
@@ -105,7 +102,7 @@ $_SESSION['avatar'] = $result_avatar;
 
 $query_update_stats = mysqli_query($bd_connect,"UPDATE `stats` SET `str`= $str,`speed`= $speed,`dexterity`= $dexterity,`stamina`= $stamina,`durability`=$durability,`reflexes`=$reflexes,`accuracy`=$accuracy,`intelligence`=$intelligence,`wisdom`=$wisdom,`intuition`=$intuition,`memory`=$memory,`charisma`=$charisma,`mind`=$mind,`lucky`=$lucky,`hp`=$hp,`mp`=$mp,`st`=$st WHERE user_id = $id");
 
-$query_update_user = mysqli_query($bd_connect,"UPDATE `user` SET `name`= '$name',`age`='$age',`user_race`='$race2',`user_genre`='$user_genre', `character`='$user_character',`worldview`='$user_worldview',`life_goal`='$user_life_goal',`hobby`='$user_hobby',`language`='$user_language',`relations`='$user_relations',`prehistory`='$user_prehistory' WHERE user_id = '$id'");
+$query_update_user = mysqli_query($bd_connect,"UPDATE `user` SET `name`= '$name',`user_race`='$race2' WHERE user_id = '$id'");
 //var_dump($_POST);
 
 //$q_skill_check = mysqli_query($bd_connect,"INSERT INTO `user_skill` (`user_id`, `skill_id`, `skill_exp`, `skill_lvl`) VALUES ($id,skill_id_gob,0,1) WHERE `skill_id` = 'skill_id_gob'");

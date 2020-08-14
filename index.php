@@ -1,10 +1,13 @@
 <?php
 session_start();
 include "bd.php";
+//Module
+include'engine/main/modules/modules.php';
+include 'templates/html/page_vue.php';
+//Option
+$id = $_SESSION['userid'];
 
-
-
-
+/*
 if (empty($_SESSION['userid'])){
     include "D:/os/OSPanel/domains/ichiru/templates/modules/header.php";
 }
@@ -14,7 +17,7 @@ else if (empty($_SESSION['user_name'])) {
 else{
 	include "templates/html/main.php";
 }
-
+*/
 
 
 $RequestURI = $_SERVER['REQUEST_URI']; // Узнаем где находиться пользователь
@@ -30,10 +33,17 @@ switch ($RequestApi) {
         include_once 'engine/main/modules/modules.php';
         break;
 
+    case 'page_vue':
+        include_once 'templates/html/page_vue.php';
+        break;
+
 	//Взаимодействие с пользователями
     //Форма регистрации
-    case 'register':
-        include_once 'templates/user/register.php';
+    case 'form-player.add':
+        include_once 'templates/user/form-player.add.php';
+        break;
+    case 'user.add':
+        include_once 'engine/user/player.add.php';
         break;
     case 'register':
         include_once 'templates/user/register.php';

@@ -1,668 +1,249 @@
-/* =========== © 2016 Centroarts.com =========== */
-
-/* Шапка */
-* {
-    margin: 0;
-    padding: 0;
-    color: #fff;
+*{
+   font-size: 15px;
+   margin: 0;
+   padding: 0;
+   outline: none;
+   border: none;
+   list-style: none;
+   text-decoration: none;
+   color: #fff;
+   box-sizing: border-box;
+   font-family: Roboto,sans-serif;
+   transition: .2s ease;
 }
-a{
-    color: #fff;
+body{
+   height: 100%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   flex-direction: column;
+   background: #100f15;
 }
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background: #666;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+button{
+   background: #23232f;
+   padding: 5px;
+   margin: 3px 0;
 }
-li{
-    list-style: none;
-    text-decoration: none;
+textarea{
+   height: 14%;
+   width: 99%;
+   margin: 2px;
+   background: #16161e;
 }
-li{
-    /* font-size: 21px; */
-    list-style: none;
-    /* align-items: center; */
-    justify-content: center;
-    margin: 7px;}
-img{
-    margin: 10px;
+/*Room*/
+.room{
+   width: 100%;
+   height: 99%;
+   display: flex;
+   flex-direction: row;
+   align-items: flex-start;
+   justify-content: center;
+   padding: 5px;
 }
-.header {
-max-width: 1920px;
-width: 100%;
-min-height: 30px;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
+.room-menu{
+   width: 25%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 5px;
+   margin: 5px;
+   background: #23232f;
 }
-.header-wrapper {
-max-width: 1366px;
-width: 100%;
-min-height: 30px;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-background: #666;
+.menu__room-stats{
+   display: flex;
+   flex-direction: column;
+   /* align-items: flex-start; */
+   justify-content: center;
+   padding: 5;
 }
-.header-menu-wrapper {
-max-width: 1366px;
-width: 100%;
-min-height: 30px;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: row;
-background: #343436;
-}
-.head-menu {
-width: 100%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-direction: row;
-}
-
-/* header 1*/
-.header_logo{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-.link_user{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-form > p{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-form > li > input{
-    color: #000;
-}
-input.submit{
-    background: #343436;
-    border: #343436;
-    padding: 5px;
-}
-input.submit:focus{
-    border: #343436;
+.menu__room-info{
+   width: 100%;
+   background: #16161e;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   padding: 5px;
+   margin: 5px;
 }
 
-/* Аватарка */
-.avatar-wrapp{
-display: flex;
-justify-content: flex-start;
-align-items: center;
-flex-direction: row;
+.room-block{
+   width: 50%;
+   background: #23232f;
+   height: 100%;
+   margin: 5px;
+   padding: 5px;
 }
-.avatar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 10px;
+.room-chat{
+   width: 25%;
+   background: #23232f;
+   height: 80%;
+   margin: 5px;
+   padding: 5px;
 }
-.avatar img{
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    margin: 5px;
-    object-fit: cover;
+.chat-window{
+   background: #16161e;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
 }
-.hp-mp-st-bar{
-background:#666;
-display: flex;
-justify-content: flex-start;
-align-items: center;
-flex-direction: column;
-margin: 15px;
-padding:5px;
+.chat-window > li{
+   background: #23232f;
+   padding: 0 10px;
+   margin: 3px;
 }
-.hp-bar{
-    margin: 2px;
-    background: #FF1828;
-    width: 120px;
-    height: 15px;
-}
-.mp-bar{
-    margin: 2px;
-    background: #000BDB;
-    width: 120px;
-    height: 15px;
-}
-.st-bar{
-    margin: 2px;
-    background: #0AD902;
-    width: 120px;
-    height: 15px;
-}
-/* Map */
-.map-wrapp{
-display: flex;
-justify-content: flex-end;
-align-items: flex-end;
-flex-direction: column;
-margin: 5px;
-}
-.map-wrapp1{
-display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-    margin: 5px;
-    background: url(/uploads/logo/map.jpg);
-    width: 100%;
-    height: 197%;
-    background-size: contain;
-}
-.map img{
-display: flex;
-justify-content: flex-end;
-align-items: flex-end;
-flex-direction: column;
-max-width: 65px;
-}
-/* Menu */
-
-.menu-wrapper{
-	display: flex;
-    /* justify-content: flex-start; */
-    align-items: flex-start;
-    flex-direction: row;
-
-}
-/*.menu-list{
-margin: 5px;
-background: #343436;
-border-radius: 50%;
-width:120px;
-height:120px;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-}
-
-/* stats*/
-.content-wrapper{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-.stats-wrapp{
-	display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-        padding: 20px;
-}
-.status:focus .stats-wrapp{
-    display:block;
-}
-
-.specifications li{
-    margin: 4px;
-    color: #fff;
-}
-span{
-	font-size: 20px;
-}
-.stats-wrapp-list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.stats-list{
-	display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 10px;
-    box-sizing: border-box;
-}
-ul.stats_ul{
-    margin-left: 20px;
-}
-/*ul{
-    margin-left: 10px;
-    font-size: 17px;
-	display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}*/
-.general-stats li{
-	margin: 6px;
-}
-.text-status{
-	display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-/* skill */
-
-.skill-wrapp{
-	background: #343436;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-}
-.skill-list{
-	display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.skill-name{
-    display: flex;
-    width: 120px;
-    height: 100px;
-    background: #666;
-    margin: 10px 0px 10px 10px;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 5px;
-}
-.skill-desc{
-        display: flex;
-    height: 100px;
-    margin: 10px;
-    width: 900px;
-    background: #666;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-/* inventory */
-
-.inventory-wrapp{
-	background: #343436;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-.inventory-slot{
-	background: #666;
-    margin: 6px;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.inventory-slot:hover{
--webkit-box-shadow: 0px 0px 8px 4px rgba(214,214,214,1);
--moz-box-shadow: 0px 0px 8px 4px rgba(214,214,214,1);
-box-shadow: 0px 0px 8px 4px rgba(214,214,214,1);
-cursor: pointer
-}
-.inventory-list{
-    padding: 5px;
-	display: flex;
-    flex-wrap: wrap;
-}
-/* equipment */
-
-.equipment-wrapp{
-	background: #343436;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-.equipment-list{
-	display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-}
-.equipment-list-main{
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-.equipment-link{
-	background: #666;
-    margin: 6px;
-    width: 60px;
-    height: 60px;
-}
-.equipment-list-art{
-	background: #666;
-    margin: 6px;
-    width: 250px;
-    height: 400px;
-}
-.equipment-list-side{
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-/* guild */
-
-.guild-wrapp{
-    background: #343436;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-.guild-list{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.guild-item {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-.guild-name{
-    width: 100px;
-    height: 100px;
-    margin: 10px 0px 10px 10px;
-    background: #666;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.guild-desc{
-    width: 100%;
-    height: 100px;
-	margin: 10px;
-    background: #666;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-/* Start-game-menu*/
-
-.start-menu{
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.start-list{
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.nick-name{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.nick-name h2 {
-    font-size: 20px;
-}
-
-.class-pers-tabs{
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-table{
-    margin: 10px;
-}
-span{
-}
-a{
-	text-decoration: none;
-    font-size: 20px;
-}
-.right{
-	margin:10px;
-}
-/* Quest */
-.quest_wrap{
-        background: #343436;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-.quest_1{
-    background: #666;
-    padding: 6px;
-    width: 100%;
-}
-.form_quest{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-.form_quest > input{
-    color: #000;
-        padding: 5px;
-}
-input.submit1{
-    background: #343436;
-    border: #343436;
-    font-size: 17px;
-    color: #fff;
-}
-/* friend */
-.friend-wrapp{
-    background: #343436;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 20px;
-}
-.friend{
-    background: #666;
-    padding: 6px;
-    width: 100%;
+.chat-block{
+   background: #16161e;
+   width: 100%;
+   height: 75%;
+   margin: 5 0;
+   padding: 5px;
 }
 .line{
-    width: 100%;
-    padding: 7px;
-}
-/* Боковая панель*/
-
-.tabs_container {
-    background: #343436;
-    font-size: 20px;
-}
-.hide, .tab_content {
-    display:none;
-    width: 100%;
-}
-.hide + label {
-    display:inline-block;
-    color :#fff;
-    order:0;
-    width: 100%;
-}
-.hide:checked + label {
-    color:#000;
-    z-index:1;
-}
-.hide:checked + label + .tab_content {
-    display: block;
-    color: #000;
-    z-index: 1;
-    position: absolute;
-    top: 160px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 100%;
-    max-width: 1050px;
-    /* background: #343436; */
-    /* width: 100%; */
-}
-label{
-    margin: 2px;
+   background: #fff;
 }
 
 
-.tabs_container1 {
-    background: #343436;
-    font-size: 20px;
+.user-avatar{
+   width: 50px;
+   height: 50px;
+   /* margin: 0 5px; */
+   display: flex;
+   align-items: center;
 }
-.hide1, .tab_content1{
-    width: 100%;
-}
-.hide + label {
-    display:inline-block;
-    color :#fff;
-    order:0;
-    width: 100%;
-}
-.hide1:checked + label {
-    color:#000;
-    z-index:1;
-}
-.hide:checked + .tab_content1 + label{
-    display: block;
-    color: #000;
-    z-index: 1;
-    position: absolute;
-    top: 160px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 100%;
-    max-width: 1050px;
-    /* background: #343436; */
-    /* width: 100%; */
-}
-/* */
-.tab {
-width: 100%;
-display: flex;
-align-items: flex-start;
-padding: 5px 10px;
-cursor: pointer;
-flex-direction: column;
-transition: 0.3s;
-box-sizing: border-box;
-}
-.active-tab {
-background: #C9C9C9;
-}
-.tabContent {
-max-width: 900px;
-width: 100%;
-background: #F0F0F0;
-padding: 10px;
-min-height: 400px;
-}
-.hide {
-display: none;
-}
-.show {
-display: block;
+.user-avatar > img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 50%;
+   padding: 5px;
 }
 
-/* avatar */
-.avatar_form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.avatar_form > input{
-    padding: 5px;
-}
-.hide_avatar > li{
-    display: none;
-}
-.hide_avatar:hover > li{
-    display: block;
-}
-.option_wrap{
-    background: #343436;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-label{
-    padding: 5px;
-}
+/*MainMenu*/
 
-/* addcharacter */
-option{
-    padding: 2px;
-    color: #343436
+.menu{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   align-items: flex-start;
+   justify-content: center;
+   padding: 5px;
 }
-input.input{
-    padding: 5px;
-    color: #343436
+.menu-room-room{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 5px;
 }
-select{
-    padding: 4px;
-    color: #343436
+.menu-room-user{
+   width: 40%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 5px;
+}  
+.menu__user-info{
+   width: 100%;
+   background: #16161e;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 5px;
+   margin: 5px;
 }
-input.submit{
-    padding: 5px;
-    background: #343436;
-    border: #343436;
-    font-size: 17px;
+.menu__user-navigation{
+   width: 100%;
+   background: #16161e;
+   padding: 5px;
+   margin: 5px;
 }
-li.exit_add{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 7px;
+.menu__user-navigation > li{
+   background: #23232f;
+   padding: 5px;
+   margin: 5px;
 }
+.menu__user-profile{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
+.menu__user-update{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.menu__user-avatar{
+   width: 100px;
+   height: 100px;
+   margin: 0 10px;
+}
+.menu__user-avatar > img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 50%;
+   padding: 5px;
+}
+.menu__room-title{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   margin: 5px;
+   padding: 5px;
+   background: #16161e;
+}
+.menu__room-list{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin: 5px;
+   padding: 5px;
+   background: #16161e;
+}
+.menu_room-short{
+   width: 100%;
+   background: #23232f;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: flex-start;
+   padding: 5px;
+}
+.menu_room-short > li{
+   margin-right: 10%;
+   padding: 10px;
 
-/*
-ul.form-add > li{
-    font-size: 21px;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
 }
-*/
-/* Footer */
-
-footer{
-    background: #343436;
+/*Stats*/
+span{
+   padding: 2px;
+   font-weight: bold;
+}
+.stats > li{
+   padding: 5px;
+}
+.stats__player-date{
+   display: flex;
+   flex-direction: row;
+   align-items: flex-start;
+   justify-content: space-between;
+}
+.stats-first{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
 }
