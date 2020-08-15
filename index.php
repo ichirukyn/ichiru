@@ -42,7 +42,7 @@ switch ($RequestApi) {
     case 'form-player.add':
         include_once 'templates/user/form-player.add.php';
         break;
-    case 'user.add':
+    case 'player.add':
         include_once 'engine/user/player.add.php';
         break;
     case 'register':

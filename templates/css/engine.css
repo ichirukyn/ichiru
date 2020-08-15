@@ -30,7 +30,20 @@ echo "
 
 
 
+//$q_skill_check = mysqli_query($bd_connect,"INSERT INTO `user_skill` (`user_id`, `skill_id`, `skill_exp`, `skill_lvl`) VALUES ($id,skill_id_gob,0,1) WHERE `skill_id` = 'skill_id_gob'");
 
+/*for ($i=1; $i < 31; $i++) { 
+    $q_skill_check = mysqli_query($bd_connect,"SELECT * FROM `user_skill` WHERE `skill_id` = '$i'");
+    $q_skill_check_1 = mysqli_fetch_assoc($q_skill_check);
+    $skill_id_user = $q_skill_check_1['user_id'];
+
+    if ($skill_id_user == $id) {
+        echo("Error");
+    }
+    else{
+        $q_skill_all = mysqli_query($bd_connect,"INSERT INTO `user_skill`(`user_id`, `skill_id`, `skill_exp`) VALUES ($id,$i,0)");
+    }
+}*/
 
 
 

@@ -1,7 +1,5 @@
 <?php
 session_start();
-//var_dump(stats($id,$bd_connect));
-
 
 $user_stats = user_stats($id,$bd_connect);
 $user_data = user_data($id,$bd_connect);
@@ -15,7 +13,6 @@ stats_vue($user_stats,$user_data);
 ?>
 */
 
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -23,8 +20,6 @@ stats_vue($user_stats,$user_data);
 </head>
 <body>
 <link href="http://ichiru/templates/css/styles.css" type="text/css" rel="stylesheet">
-
-
 <div class="room room-wrap">
    <div class="room-menu">
       <div class="menu__room-info">
@@ -32,13 +27,13 @@ stats_vue($user_stats,$user_data);
             <p>Страна: Королевство Квернерис</p>
             <p>Игроков: 2/8</p>
             <p>Гейммастер: Ichiru</p>
-            <button>Выйти</button>
+            <button class="btn">Выйти</button>
          </div>
       </div>
       <div class="menu__user-navigation">
-         <li>Персонаж</li>
-         <li>Инвентарь</li>
-         <li>Заклинания</li>
+         <li id="one">Персонаж</li>
+         <li id="2">Инвентарь</li>
+         <li id="3">Заклинания</li>
          <li>Способности</li>
          <li>Активные эффекты</li>
          <li>Навыки</li>
@@ -84,7 +79,7 @@ stats_vue($user_stats,$user_data);
       </div>
    </div>
 </div>
-
+<script src="http://ichiru/templates/js/main.js"></script>
 
 
 
@@ -697,7 +692,7 @@ stats_vue($user_stats,$user_data);
 
 
 */?>
--->
+--><!--
 <script src="js/lib.js"></script>
 <script>
     jQuery(function($){
@@ -708,7 +703,7 @@ stats_vue($user_stats,$user_data);
         });
     });
 
-</script>
+</script>-->
 </body>
 <footer>
     <dir>

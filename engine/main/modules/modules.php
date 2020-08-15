@@ -1,5 +1,18 @@
 <?php
 session_start();
+//Register
+
+function checkRowRegister($row){
+
+    if(!empty($row)){
+        return $row;
+    }
+    else{
+        $row = 1;
+        return $row;
+    }
+
+}
 
 //Page Stats
 
